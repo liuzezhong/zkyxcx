@@ -1,0 +1,322 @@
+<!--pages/ranking/ranking.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}">  
+        <swiper-item>  
+           <navigator url="{{item.link}}" hover-class="navigator-hover">  
+            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+           </navigator>   
+        </swiper-item>  
+      </block>  
+</swiper>
+
+<view class="user-rank">
+  <view class="rank-self">
+    我
+  </view>
+  <view class="userinfo-header">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  <view class="user-ranking">
+    {{myRank.rankNumber}}
+  </view>
+  <view class="rank-ming">
+    名
+  </view>
+  <view class="rank-view">
+    <view class="rank-icon">
+      <image src="../../images/kb.png" class="kb-image"/>  
+    </view>
+    <view class="icon-number">
+      {{myRank.rankMoney}}
+    </view>
+  </view>
+</view>
+
+<view class="rank-interval">
+</view>
+
+<block wx:for="{{userRank}}">
+  <view class="user-rank">
+  <block wx:if="{{(index+1) == 1}}">
+    <view class="rank-no1">
+      <image src="../../images/no1.png" class="no1-image"/>
+    </view>
+    <view class="friend-header">
+      <image src="{{item['userAvatarUrl']}}" class="userinfo-avatar" />
+    </view>
+  </block>
+  
+  <block wx:elif="{{(index+1) == 2}}">
+    <view class="rank-no1">
+      <image src="../../images/no2.png" class="no1-image"/>
+    </view>
+    <view class="friend-header">
+      <image src="{{item['userAvatarUrl']}}" class="userinfo-avatar" />
+    </view>
+  </block>
+
+  <block wx:elif="{{(index+1) == 3}}">
+    <view class="rank-no1">
+      <image src="../../images/no3.png" class="no1-image"/>
+    </view>
+    <view class="friend-header">
+      <image src="{{item['userAvatarUrl']}}" class="userinfo-avatar" />
+    </view>
+  </block>
+  
+  <block wx:else>
+    <view class="rank-self-three">
+      {{index+1}}
+    </view>
+    <view class="friend-header-three">
+      <image src="{{item['userAvatarUrl']}}" class="userinfo-avatar" />
+    </view>
+  </block>
+
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          {{item['userName']}}
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            {{item['rankMoney']}}
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: {{item['percentage']}};">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<view>{{object.text}}</view>
+<button bindtap="changeItemInObject"> Change Object data </button>
+<!--
+<view class="user-rank">
+  <view class="rank-no1" wx:if="{{userRankTopThree[0]['rankNumber'] == 1}}">
+    <image src="../../images/no1.png" class="no1-image"/>
+  </view>
+  <view class="rank-no1" wx:elif="{{userRankTopThree[0]['rankNumber'] == 2}}">
+    <image src="../../images/no2.png" class="no1-image"/>
+  </view>
+  <view class="rank-no1" wx:elif="{{userRankTopThree[0]['rankNumber'] == 3}}">
+    <image src="../../images/no3.png" class="no1-image"/>
+  </view>
+  <view class="rank-self-three" wx:else>
+    {{userRankTopThree[0]['rankNumber']}}
+  </view>
+
+  <view class="friend-header">
+    <image src="{{userRankTopThree[0]['userAvatarUrl']}}" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          {{userRankTopThree[0]['userName']}}
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            12230
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: {{userRankTopThree[1]['percentage']}};">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-no1">
+    <image src="../../images/no2.png" class="no1-image"/>
+  </view>
+  <view class="friend-header">
+    <image src="http://www.qqxoo.com/uploads/allimg/170129/2255523224-5.jpg" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          周杰伦
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            5681
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: 76%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-no1">
+    <image src="../../images/no3.png" class="no1-image"/>
+  </view>
+  <view class="friend-header">
+    <image src="http://img1.skqkw.cn:888/2014/12/08/07/rf5rlvjegvz-10335.jpg" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          白骨精
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            924
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: 61%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-self-three">
+    4
+  </view>
+  <view class="friend-header-three">
+    <image src="http://img2.imgtn.bdimg.com/it/u=3065230094,1438966738&fm=26&gp=0.jpg" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          王大锤
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            736
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: 54%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-self-three">
+    5
+  </view>
+  <view class="friend-header-three">
+    <image src="http://www.qqxoo.com/uploads/allimg/170705/1412591Z3-2.jpg" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          中铠云
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            681
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width: 49%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-self-three">
+    6
+  </view>
+  <view class="friend-header-three">
+    <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          江南春
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            544
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width:42%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-rank">
+  <view class="rank-self-three">
+    17
+  </view>
+  <view class="friend-header-three">
+    <image src="http://k2.jsqq.net/uploads/allimg/1706/7_170622145618_8.jpg" class="userinfo-avatar" />
+  </view>
+  <view class="rank-right">
+    <view class="headerimg-right">
+      <view class="right-top">
+        <view class="rank-name">
+          金大宝
+        </view>
+        <view class="rank-view">
+          <view class="rank-icon">
+            <image src="../../images/kb.png" class="kb-image"/>  
+          </view>
+          <view class="rank-number">
+            412
+          </view>
+        </view>
+      </view>
+      <view class="right-bottom">
+        <view class="right-bottom-cover" style="width:34%;">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+-->

@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/ranking/ranking",    
+    "pages/logs/logs",
+    "pages/test/test"
+  ],
+  
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#3f84fe",
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "images/dt.png",
+        "selectedIconPath" : "images/dt-s.png",
+        "pagePath": "pages/index/index",
+        "text": "动态"
+      },
+      {
+        "iconPath": "images/rw.png",
+        "selectedIconPath": "images/rw-s.png",
+        "pagePath": "pages/logs/logs",
+        "text": "任务"
+      },
+      {
+        "iconPath": "images/tt.png",
+        "selectedIconPath": "images/tt-s.png",
+        "pagePath": "pages/ranking/ranking",
+        "text": "天梯"
+      },
+      {
+        "iconPath": "images/wd.png",
+        "selectedIconPath": "images/wd-s.png",
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }
+    ]
+  }
+}
