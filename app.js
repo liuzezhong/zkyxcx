@@ -6,8 +6,6 @@ App({
       success: function () {
         //查看本地缓存是否存在skey
         var skey = wx.getStorageSync('skey');
-        console.log('onLaunch');
-        console.log(wx.getStorageSync('skey'));
         if(skey) {
           //存在本地缓存再去服务端验证
           wx.request({
@@ -39,8 +37,6 @@ App({
   },
 
   userLogin: function() {
-    console.log('userLogin');
-    console.log(wx.getStorageSync('skey'));
     wx.login({
       success: function (res_code) {
         if (res_code.code) {
@@ -62,13 +58,10 @@ App({
                   var skey = res.data;
                   if (skey.status == 1) {
                     wx.setStorageSync('skey', skey.data);
-                    console.log('LoginSuccess');
-                    console.log(wx.getStorageSync('skey'));
                     wx.switchTab({
                       url: '/pages/index/index'
                     })
                   } else if (skey.status == 0) {
-                    console.log(skey.message);
                   }
                 }
               })

@@ -31,5 +31,11 @@ Page({
         })
       }
     })
+  },
+  
+  huodong: function(event) {
+    wx.navigateTo({
+      url: '../details/details'
+    })
   }
 })

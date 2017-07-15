@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#3F84FE",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "铁人三项赛",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": "true"
+}
