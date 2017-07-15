@@ -17,7 +17,7 @@ Page({
     console.log(wx.getStorageSync('skey'));
     var that = this;
     wx.request({
-      url: 'http://localhost/index.php?m=home&c=login&a=getUserInfo',
+      url: 'http://192.168.100.252/index.php?m=home&c=login&a=getUserInfo',
       data: {
         skey: wx.getStorageSync('skey'),
       },
