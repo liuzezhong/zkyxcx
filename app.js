@@ -11,7 +11,7 @@ App({
         if(skey) {
           //存在本地缓存再去服务端验证
           wx.request({
-            url: 'http://localhost/index.php?m=home&c=login&a=checksession',
+            url: 'http://192.168.100.252/index.php?m=home&c=login&a=checksession',
             data: {
               skey: skey,
             },
@@ -49,7 +49,7 @@ App({
               //发起网络请求
               
               wx.request({
-                url: 'http://localhost/index.php?m=home&c=login&a=index',
+                url: 'http://192.168.100.252/index.php?m=home&c=login&a=index',
                 data: {
                   res_code: res_code.code,
                   res_info: res.rawData,
@@ -97,7 +97,7 @@ App({
 
                 //发起网络请求
                 wx.request({
-                  url: 'http://localhost/index.php?m=home&c=login&a=index',
+                  url: 'http://192.168.100.252/index.php?m=home&c=login&a=index',
                   data: {
                     res_code: res_code.code,
                     res_info: res.rawData,

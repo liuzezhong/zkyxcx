@@ -1,11 +1,11 @@
 {
-  "pages":[
+  "pages": [
+    "pages/task/detail/detail",
     "pages/index/index",
-    "pages/ranking/ranking",    
+    "pages/ranking/ranking",
     "pages/logs/logs",
     "pages/test/test"
   ],
-  
   "tabBar": {
     "color": "#808080",
     "selectedColor": "#3f84fe",
@@ -14,7 +14,7 @@
     "list": [
       {
         "iconPath": "images/dt.png",
-        "selectedIconPath" : "images/dt-s.png",
+        "selectedIconPath": "images/dt-s.png",
         "pagePath": "pages/index/index",
         "text": "动态"
       },
