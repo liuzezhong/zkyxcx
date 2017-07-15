@@ -1,0 +1,81 @@
+/* detail.wxss */
+
+page {
+	height: 100%;
+}
+
+.page {
+	height: 100%;
+	background-color: #f7f7f7;
+	font-size: 24rpx;
+	color: #808080;
+}
+
+.section {
+	margin-top: 24rpx;
+	padding: 16rpx 24rpx;
+	background-color: #fff;
+}
+
+.section.header {
+	margin-top: 0;
+}
+
+.section.description {
+	padding: 0;
+}
+
+.banner {
+	width: 100%;
+	height: 400rpx;
+}
+
+.title {
+	font-size: 26rpx;
+	line-height: 42rpx;
+}
+
+.sub-title {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 24rpx;
+	line-height: 40rpx;
+}
+
+.sub-title view.signer {
+	text-align: right;
+}
+
+.cell {
+	background-color: #fff;
+	border-bottom: #f7f7f7 1rpx solid;
+}
+
+.cell.last {
+	border-bottom: none;
+}
+
+.cell .content {
+	padding: 16rpx 24rpx;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 98rpx;
+	background-color: #ff3d3d;
+	color: #fff;
+	font-size: 34rpx;
+}
+
+.btn.btn-bottom {
+	position: fixed;
+	bottom: 0;
+}
+
+.text-dark {
+	color: #4c4c4c;
+}
