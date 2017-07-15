@@ -15,10 +15,10 @@
     我
   </view>
   <view class="userinfo-header">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarurl}}" background-size="cover"></image>
   </view>
   <view class="user-ranking">
-    {{myRank.rankNumber}}
+    {{userInfo.rankNumber}}
   </view>
   <view class="rank-ming">
     名
@@ -28,7 +28,7 @@
       <image src="../../images/kb.png" class="kb-image"/>  
     </view>
     <view class="icon-number">
-      {{myRank.rankMoney}}
+      {{userInfo.rankmoney}}
     </view>
   </view>
 </view>
