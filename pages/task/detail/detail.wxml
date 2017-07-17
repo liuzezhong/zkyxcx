@@ -4,7 +4,7 @@
 	<scroll-view>
 		<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
 		
-		<view class="section header">
+		<view class="section section-top">
 			<text class="title text-dark">铁人三项赛</text>
 			<view class="sub-title">
 				<text class="price">费用 ¥15 / 人</text>
@@ -12,23 +12,23 @@
 			</view>
 		</view>
 
-		<view class="section description">
+		<view class="section section-fullwidth">
 			<view class="cell">
-				<view class="content">
+				<view class="cell-content">
 					<i></i>
 					<text>任务地址：<text class="text-dark">江苏 无锡 北塘区 新惠路18号</text></text>
 				</view>
 			</view>
 
 			<view class="cell">
-				<view class="content">
+				<view class="cell-content">
 					<i></i>
 					<text>报名日期：<text class="text-dark">07/01 ～ 07/10</text></text>
 				</view>
 			</view>
 
 			<view class="cell">
-				<view class="content">
+				<view class="cell-content">
 					<i></i>
 					<text>任务日期：<text class="text-dark">08/01 ～ 08/10</text></text>
 				</view>
@@ -40,7 +40,7 @@
 		</view>
 	</scroll-view>
 	
-	<view class="btn btn-bottom">我要挑战</view>
+	<button class="btn btn-bottom">我要挑战</button>
 </view>
 
 

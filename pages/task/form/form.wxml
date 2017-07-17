@@ -1,0 +1,72 @@
+<!--form.wxml-->
+
+<view class="page">
+
+	<view class="section section-fullwidth section-top">
+		<view class="cell">
+			<view class="cell-content text-dark text-lg">
+				铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛
+			</view>
+		</view>
+
+		<view class="cell">
+			<view class="cell-content">
+				<i></i>
+				<text>任务地址：<text class="text-dark">江苏 无锡 北塘区 新惠路18号</text></text>
+			</view>
+		</view>
+
+		<view class="cell">
+			<view class="cell-content">
+				<i></i>
+				<text>报名日期：<text class="text-dark">07/01 ～ 07/10</text></text>
+			</view>
+		</view>
+
+		<view class="cell cell-last">
+			<view class="cell-content">
+				<i></i>
+				<text>任务日期：<text class="text-dark">08/01 ～ 08/10</text></text>
+			</view>
+		</view>
+	</view>
+
+	<view class="section section-fullwidth section-transparent tip">
+		<view class="tip-title text-dark">
+			<view class="line"></view>
+			<text>报名信息</text>
+			<view class="line"></view>
+		</view>
+		<text class="tip-description">请准确填写以下各项信息，便于官方更好的开展准备工作</text>
+	</view>
+
+	<view class="section section-fullwidth">
+		<view class="cell">
+			<view class="cell-input">
+				<label for="input1"><text>真实姓名：</text></label>
+				<input type="text" id="input1" placeholder="请输入真实姓名" placeholder-class="placeholder"/>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="cell-input">
+				<label for="input2"><text>身高：</text></label>
+				<input type="text" id="input2" placeholder="170cm" placeholder-class="placeholder"/>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="cell-input">
+				<label for="input3"><text>体重：</text></label>
+				<input type="text" id="input3" placeholder="50kg" placeholder-class="placeholder"/>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="cell-input">
+				<label for="select1"><text>性别：</text></label>
+				<picker range="{{ ['男', '女'] }}">
+					<view class="picker">男</view>
+				</picker>
+			</view>
+		</view>
+		<button class="btn btn-bottom">立即报名</button>
+	</view>
+</view>

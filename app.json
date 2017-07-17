@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/task/detail/detail",
-    "pages/index/index",
+    "pages/task/form/form",
     "pages/ranking/ranking",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/test/test"
   ],
