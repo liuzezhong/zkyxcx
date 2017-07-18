@@ -15,21 +15,21 @@
 		<view class="section section-fullwidth">
 			<view class="cell">
 				<view class="cell-content">
-					<i></i>
+					<i class="icon icon-cup"></i>
 					<text>任务地址：<text class="text-dark">江苏 无锡 北塘区 新惠路18号</text></text>
 				</view>
 			</view>
 
 			<view class="cell">
 				<view class="cell-content">
-					<i></i>
+					<i class="icon icon-rank"></i>
 					<text>报名日期：<text class="text-dark">07/01 ～ 07/10</text></text>
 				</view>
 			</view>
 
 			<view class="cell">
 				<view class="cell-content">
-					<i></i>
+					<i class="icon icon-cup"></i>
 					<text>任务日期：<text class="text-dark">08/01 ～ 08/10</text></text>
 				</view>
 			</view>

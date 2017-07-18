@@ -1,3 +1,5 @@
+@import "/common/icons.wxss";
+
 page {
 	height: 100%;
 }
@@ -13,6 +15,10 @@ page {
 .text-lg {
 	font-size: 26rpx;
 	line-height: 42rpx;
+}
+
+.text-black {
+	color: #000;
 }
 
 .text-dark {
@@ -47,6 +53,8 @@ page {
 }
 
 .cell .cell-content {
+	display: flex;
+	align-items: center;
 	padding: 16rpx 24rpx;
 }
 
@@ -86,4 +94,15 @@ page {
 .placeholder {
 	color: #b3b3b3;
 	font-size: 24rpx;
+}
+
+.icon {
+	content: ' ';
+	display: block;
+	margin-right: 8rpx;
+	width: 24rpx;
+	height: 24rpx;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
