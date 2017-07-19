@@ -98,7 +98,7 @@
 </view>
 </block>
 <view>{{object.text}}</view>
-<button bindtap="changeItemInObject"> Change Object data </button>
+<!--<button bindtap="changeItemInObject"> Change Object data </button>-->
 <!--
 <view class="user-rank">
   <view class="rank-no1" wx:if="{{userRankTopThree[0]['rankNumber'] == 1}}">

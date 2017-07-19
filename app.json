@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/task/detail/detail",
     "pages/index/index",
     "pages/ranking/ranking",
+    "pages/task/detail/detail",
     "pages/logs/logs",
     "pages/test/test",
     "pages/details/details"
@@ -22,7 +22,7 @@
       {
         "iconPath": "images/rw.png",
         "selectedIconPath": "images/rw-s.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/task/detail/detail",
         "text": "任务"
       },
       {
@@ -34,7 +34,7 @@
       {
         "iconPath": "images/wd.png",
         "selectedIconPath": "images/wd-s.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/index/index",
         "text": "我的"
       }
     ]
