@@ -1,0 +1,30 @@
+/* form.wxss */
+@import "/common/common.wxss";
+
+.tip {
+	position: relative;
+}
+
+.tip-title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.tip-title>text {
+	display: block;
+	padding: 0 24rpx;
+	line-height: 24rpx;
+}
+
+.tip-title>.line {
+	flex-grow: 1;
+	display: block;
+	min-width: 10rpx;
+	border-top: solid 1rpx #e6e6e6;
+}
+
+.tip-description {
+	display: block;
+	margin: 16rpx 24rpx;
+}
