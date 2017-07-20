@@ -1,14 +1,14 @@
 {
   "pages": [
-
-    "pages/task/form/form",
-    "pages/task/detail/detail",
-    "pages/task/index/index",
-    "pages/ranking/ranking",
+    
     "pages/index/index",
+    "pages/task/index/index",
+    "pages/task/form/form",
+    "pages/ranking/ranking",
     "pages/logs/logs",
-    "pages/test/test",
-    "pages/details/details"
+    "pages/task/detail/detail",
+    "pages/task/success/success"
+    
   ],
   "tabBar": {
     "color": "#808080",
@@ -25,7 +25,7 @@
       {
         "iconPath": "images/rw.png",
         "selectedIconPath": "images/rw-s.png",
-        "pagePath": "pages/task/detail/detail",
+        "pagePath": "pages/task/index/index",
         "text": "任务"
       },
       {

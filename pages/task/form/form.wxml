@@ -5,7 +5,7 @@
 	<view class="section section-fullwidth section-top">
 		<view class="cell">
 			<view class="cell-content text-dark text-lg">
-				铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛铁人三项赛
+				{{tasksInfo.title}}【{{projectInfo.title}}】
 			</view>
 		</view>
 
@@ -19,17 +19,25 @@
 		<view class="cell">
 			<view class="cell-content">
 				<i class="icon icon-rank"></i>
-				<text>报名日期：<text class="text-dark">07/01 ～ 07/10</text></text>
+				<text>任务期限：<text class="text-dark">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text></text>
 			</view>
 		</view>
 
 		<view class="cell cell-last">
 			<view class="cell-content">
 				<i class="icon icon-cup"></i>
-				<text>任务日期：<text class="text-dark">08/01 ～ 08/10</text></text>
+				<text>报名期限：<text class="text-dark">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text></text>
 			</view>
 		</view>
 	</view>
+
+  <view class="cell cell-last">
+			<view class="cell-content">
+				<i class="icon icon-cup"></i>
+				<text>报名费用：<text class="text-dark">{{projectInfo.price}}元</text></text>
+			</view>
+		</view>
+	
 
 	<view class="section section-fullwidth section-transparent tip">
 		<view class="tip-title text-dark">
@@ -40,33 +48,21 @@
 		<text class="tip-description">请准确填写以下各项信息，便于官方更好的开展准备工作</text>
 	</view>
 
-	<view class="section section-fullwidth">
-		<view class="cell">
-			<view class="cell-input">
-				<label for="input1"><text>真实姓名：</text></label>
-				<input type="text" id="input1" placeholder="请输入真实姓名" placeholder-class="placeholder"/>
-			</view>
-		</view>
-		<view class="cell">
-			<view class="cell-input">
-				<label for="input2"><text>身高：</text></label>
-				<input type="text" id="input2" placeholder="170cm" placeholder-class="placeholder"/>
-			</view>
-		</view>
-		<view class="cell">
-			<view class="cell-input">
-				<label for="input3"><text>体重：</text></label>
-				<input type="text" id="input3" placeholder="50kg" placeholder-class="placeholder"/>
-			</view>
-		</view>
-		<view class="cell">
-			<view class="cell-input">
-				<label for="select1"><text>性别：</text></label>
-				<picker range="{{ ['男', '女'] }}">
-					<view class="picker">男</view>
-				</picker>
-			</view>
-		</view>
-		<button class="btn btn-bottom">立即报名</button>
+  <form bindsubmit="formSubmit">
+    <view class="section section-fullwidth">
+      <block wx:for="{{formInfo}}">
+        <view class="cell">
+        <view class="cell-input">
+          <label for="input1"><text>{{item['name']}}：</text></label>
+          <input type="text" name="{{item['name_id']}}" placeholder="请输入{{item['name']}}" placeholder-class="placeholder"/>
+        </view>
+      </view>
+      </block>
 	</view>
+    <view class="btn-area">
+      <button formType="submit" class="btn">Submit</button>
+    </view>
+  </form>
+
+	
 </view>
