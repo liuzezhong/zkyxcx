@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#3f84ff",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "中铠街区体育",
+  "backgroundColor": "#f7f7f7",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh":"true"
+}
