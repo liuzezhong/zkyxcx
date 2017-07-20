@@ -1,7 +1,14 @@
 {
   "pages": [
+<<<<<<< HEAD
     
     "pages/index/index",
+=======
+    "pages/success/success",
+    "pages/home/home",
+    "pages/task/form/form",
+    "pages/task/detail/detail",
+>>>>>>> 838b4b17e63bf4caafe84f12582abbfd4c1f02cb
     "pages/task/index/index",
     "pages/task/form/form",
     "pages/ranking/ranking",
