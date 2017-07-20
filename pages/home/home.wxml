@@ -1,0 +1,60 @@
+<!--home.wxml-->
+<view class="header">
+    <view class="header_left">
+        <view class="message">
+            <image class="portrait" src="../../images/banner.jpg"></image>
+            <view class="userbox">
+                <view class="username">Yogurt</view>
+                <view class="score">250/500</view>
+            </view>
+        </view>
+        <progress percent="50" activeColor="#ffbe00" backgroundColor="#d9d9d9" active/>
+    </view>
+    <image class="header_right" src="../../images/gift.png"></image>
+</view>
+
+<view class="soon">
+    <view class="title">即将参与</view>
+    <view class="game">
+        <image class="game_left" src="../../images/banner.jpg"></image>
+        <view class="game_right">
+            <view class="game_title">羽毛球比赛</view>
+            <view class="game_k">可收获<text>8888</text>铠币</view>
+            <view class="game_time">2017-01-10开始</view>
+        </view>
+    </view>
+   
+     <view class="game">
+        <image class="game_left" src="../../images/banner.jpg"></image>
+        <view class="game_right">
+            <view class="game_title">羽毛球比赛</view>
+            <view class="game_k">可收获<text>8888</text>铠币</view>
+            <view class="game_time">2017-01-10开始</view>
+        </view>
+    </view>
+</view>
+  
+
+<view class="soon">
+    <view class="title">历史参与</view>
+    <view class="game">
+        <image class="game_left" src="../../images/banner.jpg"></image>
+        <view class="game_right">
+            <view class="game_title">羽毛球比赛</view>
+            <view class="game_k">可收获<text>8888</text>铠币</view>
+            <view class="game_time1">2017-01-10开始</view>
+        </view>
+    </view>
+
+     <view class="game">
+        <image class="game_left" src="../../images/banner.jpg"></image>
+        <view class="game_right">
+            <view class="game_title">羽毛球比赛</view>
+            <view class="game_k">可收获<text>8888</text>铠币</view>
+            <view class="game_time1">2017-01-10开始</view>
+        </view>
+    </view>
+</view>
+
+<button class="btn btn-bottom">发现赛事</button>
+  

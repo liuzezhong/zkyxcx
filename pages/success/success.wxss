@@ -1,0 +1,51 @@
+/* success.wxss */
+@import "/common/common.wxss";
+page{
+  background-color: #fa6567;
+  color:#ffffff;
+  background-image: url("../../images/back.png");
+}
+
+.group{
+  display: flex;
+  flex-direction: column;
+}
+.group icon{
+  margin-top: 160rpx;
+  text-align: center;
+}
+.prosit{
+  font-size: 46rpx;
+   margin: 24rpx 0 8rpx 0;
+   text-align: center;
+}
+#star{
+  width:26rpx;
+  height:31rpx;
+  vertical-align: 10rpx;
+}
+.succeed{
+  font-size:54rpx;
+  text-align: center;
+}
+.share{
+  font-size: 28rpx;
+   margin: 24rpx 0 24rpx 0;
+   text-align: center;
+}
+.transmit{
+  background-color: #ffffff;
+  font-size: 38rpx;
+  line-height:88rpx;
+  width:560rpx;
+  color:#fa6567;
+}
+.finish{
+  background-color:#fa6567; 
+  font-size: 38rpx;
+  line-height:88rpx;
+  width:560rpx;
+  color:#ffffff;
+  border: 1px solid #ffffff;
+  margin-top: 24rpx;
+}
