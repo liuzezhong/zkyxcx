@@ -1,4 +1,4 @@
-// pages/test/test.js
+// success.js
 Page({
 
   /**

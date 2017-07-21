@@ -4,7 +4,10 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarurl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.username}}</text>
   </view>
-  <view class="usermotto">
+  <!--<view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
+  </view>-->
+  <!--<view class="">
+    <button type="default" bindtap="huodong" size="default"> 活动详情 </button>
+  </view>-->
 </view>

@@ -1,3 +1,8 @@
 {
-	"navigationBarTitleText": "赛事报名"
+  "navigationBarBackgroundColor": "#3F84FE",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "赛事报名",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": "true"
 }

@@ -5,7 +5,7 @@
 		<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
 		
 		<view class="section section-top">
-			<text class="title text-dark">铁人三项赛</text>
+			<text class="title text-dark">{{tasksInfo.title}}</text>
 			<view class="sub-title">
 				<text class="price">费用 ¥15 / 人</text>
 				<text class="signer">余位200 ／ 已报名100</text>
@@ -23,24 +23,30 @@
 			<view class="cell">
 				<view class="cell-content">
 					<i class="icon icon-rank"></i>
-					<text>报名日期：<text class="text-dark">07/01 ～ 07/10</text></text>
+					<text>任务日期：<text class="text-dark">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text></text>
 				</view>
 			</view>
 
 			<view class="cell">
 				<view class="cell-content">
 					<i class="icon icon-cup"></i>
-					<text>任务日期：<text class="text-dark">08/01 ～ 08/10</text></text>
+					<text>报名日期：<text class="text-dark">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text></text>
 				</view>
 			</view>
 		</view>
-
 		<view class="section article text-dark">
 			活动说明
+      <text>
+        {{tasksInfo.statement}}
+      </text>
 		</view>
 	</scroll-view>
 	
-	<button class="btn btn-bottom">我要挑战</button>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
+     <button class="btn btn-bottom picker">我要挑战</button>
+  </picker>
+
 </view>
+
 
 

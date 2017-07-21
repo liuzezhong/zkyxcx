@@ -1,33 +1,18 @@
-// index.js
+// pages/task/success/success.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tasksList: [],
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivity',
-      data: {
-        
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
-      success: function (res) {
-        that.setData({
-          'tasksList': res.data,
-        });  
-      }
-    });
+  
   },
 
   /**
@@ -79,10 +64,28 @@ Page({
   
   },
 
-  tapList: function(event) {
-    var tasks_id = event.currentTarget.id;
-    wx.navigateTo({
-      url: '/pages/task/detail/detail?tasks_id='+tasks_id
-    })
-  }
+  onShareAppMessage: function (res) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '邀请好友一起报名',
+      path: '/',
+      success: function (res) {
+        console.log(res.shareTickets[0]);
+        if (res.shareTickets[0]) {
+          //用户+100积分
+        }
+      },
+      fail: function (res) {
+        console.log(res.shareTickets[0]);
+      }
+    }
+  },
+
+  
 })
