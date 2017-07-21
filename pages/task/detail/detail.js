@@ -41,7 +41,7 @@ Page({
       'tasks_id': tasks_id,
     });
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivityDetails', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivityDetails', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
       },

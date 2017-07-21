@@ -5,28 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    userInfo: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log('home.js onLoad');
+    var that = this;
+    wx.request({
+      url: 'http://192.168.100.252/index.php?m=home&c=user&a=index', //仅为示例，并非真实的接口地址
+      data: {
+        skey: wx.getStorageSync('skey'),
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          'userInfo': res.data.userInfo
+        });
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**
@@ -61,6 +78,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
+  },
+
+  findTask: function(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: '/pages/task/index/index',
+    })
   }
 })

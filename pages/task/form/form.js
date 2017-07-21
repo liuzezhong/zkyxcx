@@ -28,17 +28,19 @@ Page({
       project_id : project_id,
     });
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivityForms', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivityForms', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
         project_id: project_id,
       },
+      /*
       header: {
         'content-type': 'application/x-www-form-urlencoded'
-      },
+      },*/
       method: 'POST',
       success: function (res) {
         console.log(res.data);
+        debugger
         that.setData({
           'tasksInfo': res.data.tasks,
           'projectInfo': res.data.project,
@@ -109,7 +111,7 @@ Page({
     console.log(project_id);
 
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=saveForms', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=saveForms', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
         project_id: project_id,
@@ -130,19 +132,24 @@ Page({
             duration: 2000
           })
         }else if(res.data.status == 1) {
+
+
+          wx.navigateTo({
+            url: '/pages/success/success',
+          })
+          /*  
           wx.showToast({
             title: res.data.message,
             icon: 'success',
             duration: 2000,
             success: function() {
-              /*wx.switchTab({
+              wx.switchTab({
                 url: '/pages/task/index/index'
-              })*/
-              wx.navigateTo({
-                url: '/pages/task/success/success',
-              })       
+              })
+                   
             }
           })
+          */
         }
         
       },

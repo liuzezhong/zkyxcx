@@ -2,9 +2,9 @@
 <view class="header">
     <view class="header_left">
         <view class="message">
-            <image class="portrait" src="../../images/banner.jpg"></image>
+            <image class="portrait" src="{{userInfo.avatarurl}}"></image>
             <view class="userbox">
-                <view class="username">Yogurt</view>
+                <view class="username">{{userInfo.username}}</view>
                 <view class="score">250/500</view>
             </view>
         </view>
@@ -56,5 +56,5 @@
     </view>
 </view>
 
-<button class="btn btn-bottom">发现赛事</button>
+<button class="btn btn-bottom" bindtap="findTask">发现赛事</button>
   

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivity',
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivity',
       data: {
         
       },
