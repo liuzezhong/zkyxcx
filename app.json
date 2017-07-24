@@ -1,46 +1,13 @@
 {
   "pages": [
-    "pages/success/success",
     "pages/home/home",
+    "pages/index/index",
+    
+    "pages/success/success",
     "pages/task/form/form",
     "pages/task/detail/detail",
-    "pages/task/index/index",
-    "pages/ranking/ranking",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/test/test",
-    "pages/details/details"
-  ],
-  "tabBar": {
-    "color": "#808080",
-    "selectedColor": "#3f84fe",
-    "backgroundColor": "#fafafa",
-    "borderStyle": "white",
-    "list": [
-      {
-        "iconPath": "images/dt.png",
-        "selectedIconPath": "images/dt-s.png",
-        "pagePath": "pages/index/index",
-        "text": "动态"
-      },
-      {
-        "iconPath": "images/rw.png",
-        "selectedIconPath": "images/rw-s.png",
-        "pagePath": "pages/task/detail/detail",
-        "text": "任务"
-      },
-      {
-        "iconPath": "images/tt.png",
-        "selectedIconPath": "images/tt-s.png",
-        "pagePath": "pages/ranking/ranking",
-        "text": "天梯"
-      },
-      {
-        "iconPath": "images/wd.png",
-        "selectedIconPath": "images/wd-s.png",
-        "pagePath": "pages/index/index",
-        "text": "我的"
-      }
-    ]
-  }
+    
+    "pages/task/index/index"
+    
+  ]
 }

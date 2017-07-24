@@ -2,12 +2,13 @@
 
 <view class="page">
 	<view class="list">
-		<view class="item">
+    <block wx:for="{{tasksList}}">
+      <view class="item" id="{{item['tasks_id']}}" bindtap="tapList">
 			<view class="header">
-				<image class="logo" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"></image>
+				<image class="logo" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill" ></image>
 				<view class="info text-dark">
 					<view class="inline">
-						<view class="text-black">铁人三项赛</view>
+						<view class="text-black">{{item['title']}}</view>
 						<view class="with-icon">
 							<i class="icon icon-rank"></i>
 							<text>发布于5分钟前</text>
@@ -22,15 +23,15 @@
 					<view class="inline">
 						<view class="with-icon">
 							<i class="icon icon-rank"></i>
-							<text>50</text>
+							<text>{{item['reward']}}</text>
 						</view>
 						<view class="with-icon pull-right">
 							<i class="icon icon-cup"></i>
-							<text>1000+</text>
+							<text>{{item['total_personal']}}</text>
 						</view>
 						<view class="with-icon">
 							<i class="icon icon-rank"></i>
-							<text>已报名100人</text>
+							<text>已报名0人</text>
 						</view>
 					</view>
 				</view>
@@ -39,43 +40,6 @@
 				<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
 			</view>
 		</view>
-
-		<view class="item">
-			<view class="header">
-				<image class="logo" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"></image>
-				<view class="info text-dark">
-					<view class="inline">
-						<view class="text-black">铁人三项赛</view>
-						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>发布于5分钟前</text>
-						</view>
-					</view>
-					<view class="inline">
-						<view class="with-icon">
-							<i class="icon icon-cup"></i>
-							<text>由中铠街区体育赞助</text>
-						</view>
-					</view>
-					<view class="inline">
-						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>50</text>
-						</view>
-						<view class="with-icon pull-right">
-							<i class="icon icon-cup"></i>
-							<text>1000+</text>
-						</view>
-						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>已报名100人</text>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="footer">
-				<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
-			</view>
-		</view>
+    </block>
 	</view>
 </view>

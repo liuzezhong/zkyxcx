@@ -1,2 +1,0 @@
-<!--pages/details/details.wxml-->
-<image class="userinfo-avatar" src="../../images/banner.jpg" background-size="cover" style="width:100%;height:400rpx;"></image>

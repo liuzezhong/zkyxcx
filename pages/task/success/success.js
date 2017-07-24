@@ -1,4 +1,4 @@
-// pages/details/details.js
+// pages/task/success/success.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(option.query)
+  
   },
 
   /**
@@ -61,6 +61,33 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    wx.navigateTo({
+      url: '/pages/home/home',
+    })
+  },
+
+  onShareAppMessage: function (res) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '邀请好友一起报名',
+      path: '/',
+      success: function (res) {
+        console.log(res.shareTickets[0]);
+        if (res.shareTickets[0]) {
+          //用户+100积分
+        }
+      },
+      fail: function (res) {
+        console.log(res.shareTickets[0]);
+      }
+    }
+  },
+
   
-  }
 })

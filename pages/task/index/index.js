@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    tasksList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.request({
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivity',
+      data: {
+        
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        that.setData({
+          'tasksList': res.data,
+        });  
+      }
+    });
   },
 
   /**
@@ -62,5 +77,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  tapList: function(event) {
+    var tasks_id = event.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/task/detail/detail?tasks_id='+tasks_id
+    })
   }
 })

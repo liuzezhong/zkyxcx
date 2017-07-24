@@ -4,7 +4,7 @@
   <view class="prosit"><image id="star" src="../../images/star.png"></image>恭喜您！</view>
   <view class="succeed">报名已成功</view>
   <view class="share">立即分享给朋友可获得10铠币</view>
-  <button class="transmit">转发给朋友</button>
-  <button class="finish">报名完成</button>
+  <button class="transmit" open-type="share">转发给朋友</button>
+  <button class="finish" bindtap="resuccess">报名完成</button>
 </view>
 
