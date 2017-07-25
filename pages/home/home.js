@@ -6,6 +6,8 @@ Page({
    */
   data: {
     userInfo: {},
+    userTasks: {},
+    userTasksAlready: {},
   },
 
   /**
@@ -15,7 +17,7 @@ Page({
     console.log('home.js onLoad');
     var that = this;
     wx.request({
-      url: 'http://192.168.100.252/index.php?m=home&c=user&a=index', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=user&a=index', //仅为示例，并非真实的接口地址
       data: {
         skey: wx.getStorageSync('skey'),
       },
@@ -26,10 +28,13 @@ Page({
       success: function (res) {
         console.log(res.data);
         that.setData({
-          'userInfo': res.data.userInfo
+          'userInfo': res.data.userInfo,
+          'userTasks': res.data.userTasks,
+          'userTasksAlready': res.data.userTasksAlready,
         });
       }
-    })
+    });
+    
   },
 
   /**
