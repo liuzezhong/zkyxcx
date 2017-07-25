@@ -1,4 +1,28 @@
 <!--home.wxml-->
+
+<view class="hidebox">
+    <view class="signin">
+        <view class="top">
+            <image class="cx1" src="../../images/cx1.png"></image>
+            <view class="circle1">
+                <view class="circle2">
+                    <view class="signtitle1">签到</view>
+                </view>
+            </view>
+            <image class="cx2" src="../../images/cx2.png"></image>
+            <image class="tran1" src="../../images/tran1.png"></image>
+            <view class="signtitle2">签到成功</view>
+            <image class="tran2" src="../../images/tran2.png"></image>
+        </view>
+        <view class="bot">
+            <view class="bottitle1">感谢您！打卡参与中铠杯篮球赛</view>
+            <view class="bottitle2">努力争取比赛的好成绩把~</view>
+            <view class="kbbtn">点击领取奖励300铠币</view>
+        </view>
+    </view>  
+</view>
+
+
 <view class="header">
     <view class="header_left">
         <view class="message">
@@ -43,4 +67,5 @@
 </view>
 
 <button class="btn btn-bottom" bindtap="findTask">发现赛事</button>
+
   
