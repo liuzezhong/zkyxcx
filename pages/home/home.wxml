@@ -1,6 +1,6 @@
 <!--home.wxml-->
-
-<view class="hidebox">
+<block wx:if="{{scene > 0}}">
+  <view class="hidebox">
     <view class="signin">
         <view class="top">
             <image class="cx1" src="../../images/cx1.png"></image>
@@ -15,12 +15,14 @@
             <image class="tran2" src="../../images/tran2.png"></image>
         </view>
         <view class="bot">
-            <view class="bottitle1">感谢您！打卡参与中铠杯篮球赛</view>
+            <view class="bottitle1">感谢您！打卡参与{{tasks_name}}</view>
             <view class="bottitle2">努力争取比赛的好成绩把~</view>
-            <view class="kbbtn">点击领取奖励300铠币</view>
+            <view class="kbbtn" bindtap="receive">点击领取奖励{{reward}}铠币</view>
         </view>
     </view>  
 </view>
+</block>
+
 
 
 <view class="header">

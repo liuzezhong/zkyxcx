@@ -8,6 +8,9 @@ Page({
     userInfo: {},
     userTasks: {},
     userTasksAlready: {},
+    scene: 0,
+    tasks_name: '比赛',
+    reward: 100,
   },
 
   /**
@@ -15,6 +18,12 @@ Page({
    */
   onLoad: function (options) {
     console.log('home.js onLoad');
+    console.log(options);
+    // options 中的 scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
+    var scene = decodeURIComponent(options.scene);
+    console.log(scene);
+    console.log('**************');
+        
     var that = this;
     wx.request({
       url: 'http://192.168.100.252/index.php?m=activity&c=user&a=index', //仅为示例，并非真实的接口地址
@@ -34,6 +43,31 @@ Page({
         });
       }
     });
+
+    if(scene) {
+      that.setData({
+        scene : scene,
+      });
+      console.log(wx.getStorageSync('skey'));
+      wx.request({
+        url: 'http://192.168.100.252/index.php?m=activity&c=index&a=setSign', //仅为示例，并非真实的接口地址
+        data: {
+          skey: wx.getStorageSync('skey'),
+          tasks_id: scene,
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function (res) {
+          console.log(res.data.sign_task.title);
+          that.setData({
+            tasks_name: res.data.sign_task.title,
+            reward: res.data.sign_task.reward,
+          });
+        }
+      })
+    }
     
   },
 
@@ -87,9 +121,33 @@ Page({
   },
 
   findTask: function(event) {
-    console.log(event);
+  
     wx.navigateTo({
       url: '/pages/task/index/index',
+    })
+  },
+
+  receive: function(event) {
+    this.setData({
+      scene: 0,
+    });
+
+    wx.request({
+      url: 'http://192.168.100.252/index.php?m=activity&c=user&a=addRankMoney', //仅为示例，并非真实的接口地址
+      data: {
+        skey: wx.getStorageSync('skey'),
+        reward: this.data.reward,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data);
+        wx.redirectTo({
+          url: '/pages/home/home',
+        })
+      }
     })
   }
 })
