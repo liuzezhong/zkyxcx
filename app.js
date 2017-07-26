@@ -1,7 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
-    var that = this;
+    console.log('onLaunch');
+    console.log(wx.getStorageSync('skey'));
+    var that = this;    
     wx.checkSession({
       success: function () {
         //查看本地缓存是否存在skey
@@ -19,7 +21,7 @@ App({
             method: 'POST',
             success: function (res) {
               if (res.data.status == 0) {
-
+                
                 that.userLogin(); //重新登录
               }
             }
@@ -34,6 +36,7 @@ App({
         that.userLogin() //重新登录
       }
     })
+    
   },
 
   userLogin: function() {
@@ -58,8 +61,10 @@ App({
                   var skey = res.data;
                   if (skey.status == 1) {
                     wx.setStorageSync('skey', skey.data);
-                    wx.switchTab({
-                      url: '/pages/index/index'
+                    console.log('app.js userLogin');
+                    console.log(wx.getStorageSync('skey'));
+                    wx.redirectTo({
+                      url: '/pages/home/home',
                     })
                   } else if (skey.status == 0) {
                   }
@@ -123,4 +128,8 @@ App({
   },
   //全局变量默认为零
   globalData: 0,
+
+  onShow: function (options) {
+    
+  },
 })

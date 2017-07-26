@@ -60,7 +60,7 @@
       </block>
 	</view>
     <view class="btn-area">
-      <button formType="submit" class="btn">Submit</button>
+      <button formType="submit" class="btn">立即报名</button>
     </view>
   </form>
 

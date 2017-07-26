@@ -8,27 +8,9 @@ Page({
     tasksInfo: {},
     project_value: [],
     project_key: [],
-    array: ['美国', '中国', '巴西', '日本'],
     index: 0,
     tasks_id: 0,
-    objectArray: [
-      {
-        id: 0,
-        name: '美国'
-      },
-      {
-        id: 1,
-        name: '中国'
-      },
-      {
-        id: 2,
-        name: '巴西'
-      },
-      {
-        id: 3,
-        name: '日本'
-      }
-    ],
+  
   },
 
   /**
@@ -41,7 +23,7 @@ Page({
       'tasks_id': tasks_id,
     });
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivityDetails', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivityDetails', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
       },

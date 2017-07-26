@@ -61,7 +61,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    wx.navigateTo({
+      url: '/pages/home/home',
+    })
   },
 
   onShareAppMessage: function (res) {

@@ -28,11 +28,12 @@ Page({
       project_id : project_id,
     });
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=getActivityForms', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivityForms', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
         project_id: project_id,
       },
+      
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -102,6 +103,7 @@ Page({
     var formData = e.detail.value;
     var tasks_id = this.data.tasks_id;
     var project_id = this.data.project_id;
+    var skey = wx.getStorageSync('skey');
     this.setData({
       formData: formData,
     });
@@ -109,12 +111,13 @@ Page({
     console.log(project_id);
 
     wx.request({
-      url: 'http://localhost/index.php?m=activity&c=index&a=saveForms', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=saveForms', //仅为示例，并非真实的接口地址
       data: {
         tasks_id: tasks_id,
         project_id: project_id,
         formData: JSON.stringify(this.data.formData),
         testPro: this.data.testPro,
+        skey: skey,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -130,19 +133,22 @@ Page({
             duration: 2000
           })
         }else if(res.data.status == 1) {
+          wx.navigateTo({
+            url: '/pages/success/success',
+          })
+          /*  
           wx.showToast({
             title: res.data.message,
             icon: 'success',
             duration: 2000,
             success: function() {
-              /*wx.switchTab({
+              wx.switchTab({
                 url: '/pages/task/index/index'
-              })*/
-              wx.navigateTo({
-                url: '/pages/task/success/success',
-              })       
+              })
+                   
             }
           })
+          */
         }
         
       },
