@@ -37,7 +37,7 @@
 		<view class="section article text-dark">
 			活动说明
       <text>
-        {{tasksInfo.statement}}
+        {{tasksInfo.description}}
       </text>
 		</view>
 	</scroll-view>

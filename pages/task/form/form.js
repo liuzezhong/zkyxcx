@@ -33,14 +33,13 @@ Page({
         tasks_id: tasks_id,
         project_id: project_id,
       },
-      /*
+      
       header: {
         'content-type': 'application/x-www-form-urlencoded'
-      },*/
+      },
       method: 'POST',
       success: function (res) {
         console.log(res.data);
-        debugger
         that.setData({
           'tasksInfo': res.data.tasks,
           'projectInfo': res.data.project,
@@ -104,6 +103,7 @@ Page({
     var formData = e.detail.value;
     var tasks_id = this.data.tasks_id;
     var project_id = this.data.project_id;
+    var skey = wx.getStorageSync('skey');
     this.setData({
       formData: formData,
     });
@@ -117,6 +117,7 @@ Page({
         project_id: project_id,
         formData: JSON.stringify(this.data.formData),
         testPro: this.data.testPro,
+        skey: skey,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -132,8 +133,6 @@ Page({
             duration: 2000
           })
         }else if(res.data.status == 1) {
-
-
           wx.navigateTo({
             url: '/pages/success/success',
           })

@@ -8,27 +8,9 @@ Page({
     tasksInfo: {},
     project_value: [],
     project_key: [],
-    array: ['美国', '中国', '巴西', '日本'],
     index: 0,
     tasks_id: 0,
-    objectArray: [
-      {
-        id: 0,
-        name: '美国'
-      },
-      {
-        id: 1,
-        name: '中国'
-      },
-      {
-        id: 2,
-        name: '巴西'
-      },
-      {
-        id: 3,
-        name: '日本'
-      }
-    ],
+  
   },
 
   /**

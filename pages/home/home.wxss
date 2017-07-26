@@ -127,13 +127,13 @@ page{
 /*header*/
 .userback{
   width: 100%;
-  height: 350rpx;
+  height: 416rpx;
   background-color: #808080;
   position: relative;
 }
 .backimage{
   width: 100%;
-  height: 100%;
+  height:416rpx;
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
   -o-filter: blur(8px);
@@ -148,8 +148,8 @@ page{
   top: 0;
 }
 .userhead{
-  width: 200rpx;
-  height: 200rpx;
+  width: 250rpx;
+  height: 250rpx;
   border-radius: 50%;
   position: absolute;
   top:60rpx;

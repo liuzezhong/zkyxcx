@@ -1,6 +1,6 @@
 <!--home.wxml-->
-
-<view class="hidebox">
+<block wx:if="{{scene > 0}}">
+  <view class="hidebox">
     <view class="signin">
         <view class="top">
             <image class="cx1" src="../../images/cx1.png"></image>
@@ -15,27 +15,29 @@
             <image class="tran2" src="../../images/tran2.png"></image>
         </view>
         <view class="bot">
-            <view class="bottitle1">感谢您！打卡参与中铠杯篮球赛</view>
+            <view class="bottitle1">感谢您！打卡参与{{tasks_name}}</view>
             <view class="bottitle2">努力争取比赛的好成绩把~</view>
-            <view class="kbbtn">点击领取奖励300铠币</view>
+            <view class="kbbtn" bindtap="receive">点击领取奖励{{reward}}铠币</view>
         </view>
     </view>  
 </view>
+</block>
+
 
 
 <view class="header">
    <view class="userback">
-       <image class="backimage" src="../../images/banner.jpg"></image>
+       <image class="backimage" src="{{userInfo.avatarurl}}" mode="aspectFill"></image>
        <view class="whiteback"></view>
-       <image class="userhead" src="../../images/banner.jpg"></image>
-       <view class="username">Yogurt</view>
+       <image class="userhead" src="{{userInfo.avatarurl}}"></image>
+       <view class="username">{{userInfo.nick_name}}</view>
    </view>
    <view class="tabs">
        <view class="tab tabcolor1">
            <image class="tabicon" src="../../images/tabicon1.png"></image>
            <view class="words wordscolor1">
                <view class="tabtitle">当前身价</view>
-               <view class="tabnum">233,333</view>
+               <view class="tabnum">{{userInfo.rankmoney}}</view>
            </view>
        </view>
        <view class="tab tabspace tabcolor2">
@@ -49,47 +51,34 @@
 </view>
 
 
+
 <view class="soon">
     <view class="title">即将参与</view>
-    <view class="game">
+    <block wx:for="{{userTasks}}">
+      <view class="game">
         <image class="game_left" src="../../images/banner.jpg"></image>
         <view class="game_right">
-            <view class="game_title">羽毛球比赛</view>
-            <view class="game_k">可收获<text>8888</text>铠币</view>
-            <view class="game_time">2017-01-10开始</view>
+            <view class="game_title">{{item['title']}}</view>
+            <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
+            <view class="game_time">{{item['start_time']}}开始</view>
         </view>
-    </view>
-   
-     <view class="game">
-        <image class="game_left" src="../../images/banner.jpg"></image>
-        <view class="game_right">
-            <view class="game_title">羽毛球比赛</view>
-            <view class="game_k">可收获<text>8888</text>铠币</view>
-            <view class="game_time">2017-01-10开始</view>
-        </view>
-    </view>
+      </view>
+    </block>
 </view>
   
 
 <view class="soon">
     <view class="title">历史参与</view>
-    <view class="game">
+    <block wx:for="{{userTasksAlready}}">
+      <view class="game">
         <image class="game_left" src="../../images/banner.jpg"></image>
         <view class="game_right">
-            <view class="game_title">羽毛球比赛</view>
-            <view class="game_k">可收获<text>8888</text>铠币</view>
-            <view class="game_time1">2017-01-10开始</view>
+            <view class="game_title">{{item['title']}}</view>
+            <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
+            <view class="game_time1">{{item['start_time']}}开始</view>
         </view>
-    </view>
-
-     <view class="game">
-        <image class="game_left" src="../../images/banner.jpg"></image>
-        <view class="game_right">
-            <view class="game_title">羽毛球比赛</view>
-            <view class="game_k">可收获<text>8888</text>铠币</view>
-            <view class="game_time1">2017-01-10开始</view>
-        </view>
-    </view>
+    </view> 
+    </block>
 </view>
 
 <button class="btn btn-bottom" bindtap="findTask">发现赛事</button>
