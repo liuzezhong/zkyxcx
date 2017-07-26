@@ -24,26 +24,28 @@
 
 
 <view class="header">
-    <view class="pricebox">
-        <view class="pricetitle">当前身价</view>
-        <view class="pricenum">123,333,666</view>
-    </view>
-    <view class="numbox">
-        <view class="num1 num_line">
-            <view class="num_left">
-                <view class="num_1">任务完成</view>
-                <view class="num_2">68<text id="ci">次</text></view>
-            </view>
-            <image class="arrow_r" src="../../images/arrow_r.png"></image>
-        </view>
-        <view class="num1">
-            <view class="num_left">
-                <view class="num_1">天梯排名</view>
-                <view class="num_3">666<text id="ci">次</text></view>
-            </view>
-            <image class="arrow_r" src="../../images/arrow_r.png"></image>
-        </view>
-    </view>
+   <view class="userback">
+       <image class="backimage" src="../../images/banner.jpg"></image>
+       <view class="whiteback"></view>
+       <image class="userhead" src="../../images/banner.jpg"></image>
+       <view class="username">Yogurt</view>
+   </view>
+   <view class="tabs">
+       <view class="tab tabcolor1">
+           <image class="tabicon" src="../../images/tabicon1.png"></image>
+           <view class="words wordscolor1">
+               <view class="tabtitle">当前身价</view>
+               <view class="tabnum">233,333</view>
+           </view>
+       </view>
+       <view class="tab tabspace tabcolor2">
+           <image class="tabicon" src="../../images/tabicon2.png"></image>
+           <view class="words wordscolor2">
+               <view class="tabtitle">天梯排名</view>
+               <view class="tabnum">233,333</view>
+           </view>
+       </view>
+   </view>
 </view>
 
 
