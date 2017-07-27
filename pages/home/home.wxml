@@ -26,6 +26,30 @@
 
 
 <view class="header">
+<!-- <<<<<<< master  -->
+   <view class="userback">
+       <image class="backimage" src="{{userInfo.avatarurl}}" mode="aspectFill"></image>
+       <view class="whiteback"></view>
+       <image class="userhead" src="{{userInfo.avatarurl}}"></image>
+       <view class="username">{{userInfo.nick_name}}</view>
+   </view>
+   <view class="tabs">
+       <view class="tab tabcolor1">
+           <image class="tabicon" src="../../images/tabicon1.png"></image>
+           <view class="words wordscolor1">
+               <view class="tabtitle">当前身价</view>
+               <view class="tabnum">{{userInfo.rankmoney}}</view>
+           </view>
+       </view>
+       <view class="tab tabspace tabcolor2">
+           <image class="tabicon" src="../../images/tabicon2.png"></image>
+           <view class="words wordscolor2">
+               <view class="tabtitle">天梯排名</view>
+               <view class="tabnum">233,333</view>
+           </view>
+       </view>
+   </view>
+<!-- =======  -->
     <view class="pricebox">
         <view class="pricetitle">当前身价</view>
         <view class="pricenum">{{userInfo.rankmoney}}</view>
@@ -45,7 +69,9 @@
             </view>
         </view>   
     </view>
+<!-- >>>>>>> master  -->
 </view>
+
 
 
 <view class="soon">
