@@ -11,7 +11,7 @@ page{
   background-color:rgba(0, 0, 0, 0.7);
   position: fixed;
   z-index: 999;
-  /*display: none;*/
+  display: none;
 }
 .signin{
   margin-top: 35%;
@@ -120,66 +120,97 @@ page{
   bottom: 0;
 }
 
-/*header*/
 
-.pricebox{
+
+
+
+/*header*/
+.userback{
   width: 100%;
-  background-color:#3f84ff;
-   padding: 56rpx 0;
+  height: 416rpx;
+  background-color: #808080;
+  position: relative;
 }
-.pricetitle{
+.backimage{
+  width: 100%;
+  height:416rpx;
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+.whiteback{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 0;
+}
+.userhead{
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:60rpx;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+.username{
   font-size: 28rpx;
   color: #ffffff;
-  margin-left: 80rpx;
-}
-.pricenum{
-  font-size: 60rpx;
-  color: #ffffff;
+  position: absolute;
+  right: 0;
+  left: 0;
   text-align: center;
- 
+  bottom: 40rpx;
 }
-.numbox{
-  background-color: #ffffff;
-  border: 1px solid #ededed;
+
+
+/*tab*/
+.tabs{
+  margin: 24rpx 24rpx 0 24rpx;
+  display: flex;
+}
+.tab{
+  width: 339rpx;
+  padding: 32rpx;
+  border-radius: 10rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
-.num1{
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 24rpx 0;
+.tabcolor1{
+  background-color: #fff3ac;
 }
-.num_line{
-  border-right: 1px solid #ededed;
+.tabcolor2{
+  background-color: #cbebdc;
 }
-.num_left{
+.words{
   margin-left: 24rpx;
 }
-.num_1{
-  font-size: 28rpx;
-  color: #4c4c4c;
+.wordscolor1{
+  color: #59553d;
 }
-.num_2{
-  font-size: 40rpx;
-  color: #ff7c74;
+.wordscolor2{
+  color: #4d5953;
 }
-.num_3{
-  font-size: 40rpx;
-  color: #fdc837;
+.tabicon{
+  width: 66rpx;
+  height: 66rpx;
 }
-#ci{
-  font-size: 28rpx;
-  color: #4c4c4c;
+.tabtitle{
+  font-size: 24rpx;
+  line-height: 24rpx;
 }
-.arrow_r{
-  width: 40rpx;
-  height: 40rpx;
-  margin: 25rpx 24rpx 0 0;
+.tabnum{
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin-top: 8rpx;
 }
-
+.tabspace{
+  margin-left: 24rpx;
+}
 
 
 
