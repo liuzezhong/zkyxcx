@@ -10,27 +10,27 @@
 					<view class="inline">
 						<view class="text-black">{{item['title']}}</view>
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
+							<i class="icon icon-time"></i>
 							<text>发布于5分钟前</text>
 						</view>
 					</view>
 					<view class="inline">
 						<view class="with-icon">
-							<i class="icon icon-cup"></i>
+							<i class="icon icon-medal"></i>
 							<text>由中铠街区体育赞助</text>
 						</view>
 					</view>
 					<view class="inline">
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
+							<i class="icon icon-kb"></i>
 							<text>{{item['reward']}}</text>
 						</view>
 						<view class="with-icon pull-right">
-							<i class="icon icon-cup"></i>
+							<i class="icon icon-see"></i>
 							<text>{{item['total_personal']}}</text>
 						</view>
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
+							<i class="icon icon-regist"></i>
 							<text>已报名0人</text>
 						</view>
 					</view>
