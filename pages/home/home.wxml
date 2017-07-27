@@ -15,9 +15,9 @@
             <image class="tran2" src="../../images/tran2.png"></image>
         </view>
         <view class="bot">
-            <view class="bottitle1">感谢您！打卡参与{{tasks_name}}</view>
+            <view class="bottitle1">感谢您！打卡参与{{sign_task['title']}}</view>
             <view class="bottitle2">努力争取比赛的好成绩把~</view>
-            <view class="kbbtn" bindtap="receive">点击领取奖励{{reward}}铠币</view>
+            <view class="kbbtn" bindtap="receive">点击领取奖励{{sign_task['reward']}}铠币</view>
         </view>
     </view>  
 </view>
@@ -26,10 +26,9 @@
 
 
 <view class="header">
-<!-- <<<<<<< master -->
     <view class="pricebox">
         <view class="pricetitle">当前身价</view>
-        <view class="pricenum">123,333,666</view>
+        <view class="pricenum">{{userInfo.rankmoney}}</view>
     </view>
     <view class="numbox">
         <view class="num1 num_line">
@@ -39,25 +38,12 @@
             </view>
             <image class="arrow_r" src="../../images/arrow_r.png"></image>
         </view>
-        <view class="num1">
+        <view class="num1" bindtap="rankTian">
             <view class="num_left">
                 <view class="num_1">天梯排名</view>
-                <view class="num_3">666<text id="ci">次</text></view>
-<!-- ======= -->
-    <view class="header_left">
-        <view class="message">
-            <image class="portrait" src="{{userInfo.avatarurl}}"></image>
-            <view class="userbox">
-                <view class="username">{{userInfo.nick_name}}</view>
-                <view class="score">{{userInfo.rankmoney}}/500</view>
-<!-- >>>>>>> master -->
+                <view class="num_3">{{userInfo['rankNumber']}}<text id="ci">名</text></view>
             </view>
-            <image class="arrow_r" src="../../images/arrow_r.png"></image>
-        </view>
-<!-- <<<<<<< master -->
-<!--  =======  -->
-        <progress percent="{{userInfo.rankmoney / 500 * 100 }}" activeColor="#ffbe00" backgroundColor="#d9d9d9" active/>
-<!-- >>>>>>> master -->
+        </view>   
     </view>
 </view>
 
