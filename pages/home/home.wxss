@@ -221,12 +221,23 @@ page{
   margin-top: 24rpx;
   border-bottom:1px solid #e6e6e6; 
 }
+.titlebox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom:1px solid #e6e6e6; 
+  padding: 16rpx 0;
+}
 .title{
   font-size: 30rpx;
   color:#4c4c4c;
-  padding: 16rpx 0;
   width:100%;
-  border-bottom:1px solid #e6e6e6; 
+  line-height: 44rpx;
+}
+.saoicon{
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 24rpx;
 }
 .game{
   padding: 24rpx 0;
@@ -263,4 +274,33 @@ page{
 }
 .game:last-child{
   border-bottom:none; 
+}
+
+.nodata{
+  padding: 40rpx 0;
+}
+.picbox{
+  margin:0 auto 24rpx auto;
+  width: 70rpx;
+  height: 70rpx;
+}
+.nodata image{  
+  width: 100%;
+  height: 100%;
+}
+.notitle{
+  font-size: 28rpx;
+  color: #cccccc;
+  text-align: center;
+}
+.moredata{
+  font-size: 30rpx;
+  color: #4c4c4c;
+  padding: 16rpx 0;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 8rpx;
+  border-bottom:1px solid #e6e6e6; 
+  border-top:1px solid #e6e6e6; 
 }

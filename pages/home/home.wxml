@@ -53,8 +53,11 @@
 
 
 <view class="soon">
-    <view class="title">即将参与</view>
-    <block wx:for="{{userTasks}}">
+    <view class="titlebox">
+        <view class="title">即将参与</view>
+        <image class="saoicon" src="../../images/sao.png"></image>
+    </view>
+    <!--<block wx:for="{{userTasks}}">
       <view class="game">
         <image class="game_left" src="../../images/banner.jpg"></image>
         <view class="game_right">
@@ -63,13 +66,21 @@
             <view class="game_time">{{item['start_time']}}开始</view>
         </view>
       </view>
-    </block>
+    </block>-->
+    <view class="nodata">
+        <view class="picbox">
+            <image src="../../images/nodata1.png"></image>
+        </view>
+        <view class="notitle">暂时没有即将参与的赛事</view>
+    </view>
 </view>
   
 
 <view class="soon">
-    <view class="title">历史参与</view>
-    <block wx:for="{{userTasksAlready}}">
+    <view class="titlebox">
+        <view class="title">历史参与</view>
+    </view>
+    <!--<block wx:for="{{userTasksAlready}}">
       <view class="game">
         <image class="game_left" src="../../images/banner.jpg"></image>
         <view class="game_right">
@@ -78,8 +89,16 @@
             <view class="game_time1">{{item['start_time']}}开始</view>
         </view>
     </view> 
-    </block>
+    </block>-->
+    <view class="nodata">
+        <view class="picbox">
+            <image src="../../images/nodata2.png"></image>
+        </view>
+        <view class="notitle">暂时没有历史参与的赛事</view>
+    </view>
 </view>
+<view class="moredata">查看更多</view>
+<view class="whitespace"></view>
 
 <button class="btn btn-bottom" bindtap="findTask">发现赛事</button>
 
