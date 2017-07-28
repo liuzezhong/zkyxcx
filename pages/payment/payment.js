@@ -1,3 +1,5 @@
+import $ from './../common/common.js';
+
 // pages/payment/payment.js
 Page({
 
@@ -65,17 +67,33 @@ Page({
   },
 
   primary: function() {
-    wx.requestPayment({
-      'timeStamp': '',
-      'nonceStr': '',
-      'package': '',
-      'signType': 'MD5',
-      'paySign': '',
-      'success': function (res) {
-        console.log(res);
+    
+    wx.request({
+      url: 'http://192.168.100.252/index.php?m=activity&c=wxpay&a=getRequestPayment', //仅为示例，并非真实的接口地址
+      data: {
+        skey: wx.getStorageSync('skey'),
+        total_fee: 1,
+        body: '中铠街区-比赛报名费',
       },
-      'fail': function (res) {
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        wx.requestPayment({
+          'timeStamp': res.data.timeStamp.toString(),
+          'nonceStr': res.data.nonceStr,
+          'package': res.data.packages,          
+          'paySign': res.data.paySign,
+          'signType': 'MD5',
+          'success': function (res) {
+            console.log(res);
+          },
+          'fail': function (res) {
+            console.log(res);
+          }
+        })
       }
-    })
+    });    
   }
 })
