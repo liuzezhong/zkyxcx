@@ -26,7 +26,6 @@
 
 
 <view class="header">
-<!-- <<<<<<< master  -->
    <view class="userback">
        <image class="backimage" src="{{userInfo.avatarurl}}" mode="aspectFill"></image>
        <view class="whiteback"></view>
@@ -49,27 +48,6 @@
            </view>
        </view>
    </view>
-<!-- =======  -->
-    <view class="pricebox">
-        <view class="pricetitle">当前身价</view>
-        <view class="pricenum">{{userInfo.rankmoney}}</view>
-    </view>
-    <view class="numbox">
-        <view class="num1 num_line">
-            <view class="num_left">
-                <view class="num_1">任务完成</view>
-                <view class="num_2">68<text id="ci">次</text></view>
-            </view>
-            <image class="arrow_r" src="../../images/arrow_r.png"></image>
-        </view>
-        <view class="num1" bindtap="rankTian">
-            <view class="num_left">
-                <view class="num_1">天梯排名</view>
-                <view class="num_3">{{userInfo['rankNumber']}}<text id="ci">名</text></view>
-            </view>
-        </view>   
-    </view>
-<!-- >>>>>>> master  -->
 </view>
 
 

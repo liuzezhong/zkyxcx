@@ -11,21 +11,21 @@
 
 		<view class="cell">
 			<view class="cell-content">
-				<i class="icon icon-cup"></i>
+				<i class="icon icon-loc-gray"></i>
 				<text>任务地址：<text class="text-dark">江苏 无锡 北塘区 新惠路18号</text></text>
 			</view>
 		</view>
 
 		<view class="cell">
 			<view class="cell-content">
-				<i class="icon icon-rank"></i>
+				<i class="icon icon-date-gray"></i>
 				<text>任务期限：<text class="text-dark">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text></text>
 			</view>
 		</view>
 
 		<view class="cell cell-last">
 			<view class="cell-content">
-				<i class="icon icon-cup"></i>
+				<i class="icon icon-time-gray"></i>
 				<text>报名期限：<text class="text-dark">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text></text>
 			</view>
 		</view>
@@ -33,7 +33,7 @@
 
   <view class="cell cell-last">
 			<view class="cell-content">
-				<i class="icon icon-cup"></i>
+				<i class="icon icon-fee-gray"></i>
 				<text>报名费用：<text class="text-dark">{{projectInfo.price}}元</text></text>
 			</view>
 		</view>
