@@ -1,4 +1,9 @@
 <!--detail.wxml-->
+<view class="arrowhide">
+    <image src="/images/arrow_t.png"></image>
+    <view class="hidetitle">点击此处进行转发</view>
+</view>
+
 
 <view class="page">
 	<scroll-view>
@@ -41,7 +46,7 @@
       </text>
 		</view>
 	</scroll-view>
-	
+	<view class="whitespace"></view>
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
      <button class="btn btn-bottom picker">我要挑战</button>
   </picker>

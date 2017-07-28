@@ -1,6 +1,26 @@
 /* detail.wxss */
 @import "/common/common.wxss";
 
+.arrowhide{
+  width: 100%;
+  height:100%;
+  background-color:rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 999;
+}
+.arrowhide image{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.hidetitle{
+  font-size: 30rpx;
+  color: #ffffff;
+  position: absolute;
+  right: 0;
+  top:104rpx;
+}
 .banner {
 	display: block;
 	width: 100%;

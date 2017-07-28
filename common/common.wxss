@@ -106,3 +106,6 @@ page {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+.whitespace{
+  height: 122rpx;
+}
