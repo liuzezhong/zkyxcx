@@ -1,0 +1,5 @@
+<!--pages/payment/payment.wxml-->
+<view class="group">
+    <icon type="success" size="200"/>
+    <button type="primary"  bindtap="primary"> 支付金额 </button>
+</view>

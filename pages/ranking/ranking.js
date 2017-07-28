@@ -38,7 +38,7 @@ Page({
     console.log('ranking.js onLoad');
     console.log(wx.getStorageSync('skey'));
     wx.request({
-      url: 'http://192.168.100.252/index.php?m=home&c=rank&a=index', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.100.252/index.php?m=activity&c=user&a=rank', //仅为示例，并非真实的接口地址
       data: {
         skey: wx.getStorageSync('skey'),
       },
