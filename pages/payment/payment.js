@@ -1,4 +1,4 @@
-import $ from './../common/common.js';
+import $ from '../../common/common.js';
 
 // pages/payment/payment.js
 Page({
