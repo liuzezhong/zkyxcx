@@ -2,7 +2,7 @@
 <block wx:if="{{scene > 0}}">
   <view class="hidebox">
     <view class="signin">
-        <view class="top">
+         <view class="top">
             <image class="cx1" src="../../images/cx1.png"></image>
             <view class="circle1">
                 <view class="circle2">
@@ -18,64 +18,98 @@
             <view class="bottitle1">感谢您！打卡参与{{sign_task['title']}}</view>
             <view class="bottitle2">努力争取比赛的好成绩把~</view>
             <view class="kbbtn" bindtap="receive">点击领取奖励{{sign_task['reward']}}铠币</view>
-        </view>
+        </view> 
     </view>  
-</view>
+  </view>
 </block>
 
 
 
 <view class="header">
-    <view class="pricebox">
-        <view class="pricetitle">当前身价</view>
-        <view class="pricenum">{{userInfo.rankmoney}}</view>
-    </view>
-    <view class="numbox">
-        <view class="num1 num_line">
-            <view class="num_left">
-                <view class="num_1">任务完成</view>
-                <view class="num_2">68<text id="ci">次</text></view>
-            </view>
-            <image class="arrow_r" src="../../images/arrow_r.png"></image>
-        </view>
-        <view class="num1" bindtap="rankTian">
-            <view class="num_left">
-                <view class="num_1">天梯排名</view>
-                <view class="num_3">{{userInfo['rankNumber']}}<text id="ci">名</text></view>
-            </view>
-        </view>   
-    </view>
+   <view class="userback">
+          <block wx:if="{{hasUserInfo}}"> 
+          <image class="backimage" src="{{userInfo.avatarurl}}" mode="aspectFill"></image>
+          <view class="whiteback"></view>
+          <image class="userhead" src="{{userInfo.avatarurl}}"></image>
+          <view class="username">{{userInfo.nick_name}}</view>
+         </block>  
+         <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="clickLogin"></button> 
+   </view>
+   <view class="tabs">
+       <view class="tab tabcolor1">
+           <image class="tabicon" src="../../images/tabicon1.png"></image>
+           <view class="words wordscolor1">
+               <view class="tabtitle">当前身价</view>
+               <view class="tabnum">{{userInfo.rankmoney}}</view>
+           </view>
+       </view>
+       <view class="tab tabspace tabcolor2" bindtap="rankTian">
+           <image class="tabicon" src="../../images/tabicon2.png"></image>
+           <view class="words wordscolor2">
+               <view class="tabtitle">天梯排名</view>
+               <view class="tabnum">{{userInfo.rankNumber}}</view>
+           </view>
+       </view>
+   </view>
 </view>
 
 
+
 <view class="soon">
-    <view class="title">即将参与</view>
-    <block wx:for="{{userTasks}}">
-      <view class="game">
-        <image class="game_left" src="../../images/banner.jpg"></image>
-        <view class="game_right">
-            <view class="game_title">{{item['title']}}</view>
-            <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
-            <view class="game_time">{{item['start_time']}}开始</view>
+    <view class="titlebox">
+        <view class="title">即将参与</view>
+        <image class="saoicon" src="../../images/sao.png"></image>
+    </view>
+    <block wx:if="{{userTasksStatus == 1}}">
+      <block wx:for="{{userTasks}}">
+        <view class="game" bindtap="openTheTasks" id="{{item['tasks_id']}}">
+          <image class="game_left" src="{{item['tasks_image']}}"></image>
+          <view class="game_right">
+              <view class="game_title">{{item['title']}}</view>
+              <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
+              <view class="game_time">{{item['start_time']}}开始</view>
+          </view>
         </view>
+      </block>
+    </block>
+    <block wx:elif="{{userTasksStatus == 0}}">
+      <view class="nodata">
+        <view class="picbox">
+            <image src="../../images/nodata1.png"></image>
+        </view>
+        <view class="notitle">暂时没有即将参与的赛事</view>
       </view>
     </block>
 </view>
   
 
 <view class="soon">
-    <view class="title">历史参与</view>
-    <block wx:for="{{userTasksAlready}}">
-      <view class="game">
-        <image class="game_left" src="../../images/banner.jpg"></image>
-        <view class="game_right">
-            <view class="game_title">{{item['title']}}</view>
-            <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
-            <view class="game_time1">{{item['start_time']}}开始</view>
-        </view>
-    </view> 
+    <view class="titlebox">
+        <view class="title">历史参与</view>
+    </view>
+    <block wx:if="{{userTasksAlreadyStatus == 1}}">
+      <block wx:for="{{userTasksAlready}}">
+        <view class="game" bindtap="openTheTasks" id="{{item['tasks_id']}}">
+          <image class="game_left" src="{{item['tasks_image']}}"></image>
+          <view class="game_right">
+              <view class="game_title">{{item['title']}}</view>
+              <view class="game_k">可收获<text>{{item['reward']}}</text>铠币</view>
+              <view class="game_time1">{{item['start_time']}}开始</view>
+          </view>
+        </view> 
+      </block>
     </block>
+    <block wx:elif="{{userTasksAlreadyStatus == 0}}">
+      <view class="nodata">
+        <view class="picbox">
+            <image src="../../images/nodata2.png"></image>
+        </view>
+        <view class="notitle">暂时没有历史参与的赛事</view>
+      </view>
+    </block> 
 </view>
+<!-- <view class="moredata">查看更多</view> -->
+<view class="whitespace"></view>
 
 <button class="btn btn-bottom" bindtap="findTask">发现赛事</button>
 

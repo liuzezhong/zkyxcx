@@ -1,6 +1,26 @@
 /* detail.wxss */
 @import "/common/common.wxss";
 
+.arrowhide{
+  width: 100%;
+  height:100%;
+  background-color:rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 999;
+}
+.arrowhide image{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.hidetitle{
+  font-size: 30rpx;
+  color: #ffffff;
+  position: absolute;
+  right: 0;
+  top:104rpx;
+}
 .banner {
 	display: block;
 	width: 100%;
@@ -8,18 +28,98 @@
 }
 
 .title {
-	font-size: 26rpx;
-	line-height: 42rpx;
+	font-size: 17pt;
+	color: #000;
+  margin-top:40rpx;
+  margin-left: 30rpx;
+
 }
 
 .sub-title {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	font-size: 24rpx;
-	line-height: 40rpx;
+	font-size: 9pt;
+  color: #888888;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  
 }
 
 .sub-title view.signer {
 	text-align: right;
+}
+
+
+
+.title-bar {
+  display: flex;
+  flex-direction:column;
+	background-color: #fff;
+}
+
+.price {
+  margin-left: 30rpx;
+
+}
+
+.signers {
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.yijingbaoming {
+  color: #e64340;
+}
+
+.form-title {
+  margin-top: 40rpx;
+  font-size: 11pt;
+  font-color: #353535;
+  display: flex;
+  align-items: center;  
+}
+
+.line-title {
+  margin-left: 15rpx;
+  max-width: 170px;
+  color: #000000;
+}
+
+.line-value {
+  margin-left: 30rpx;
+  color: #888888;
+}
+
+.first-form-title {
+  margin-top: 30rpx;
+
+}
+
+.last-form-title {
+  margin-bottom: 30rpx;
+
+}
+
+.detail-bar {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction:column;
+	background-color: #fff;
+}
+
+.zhangcheng {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  font-size: 14pt;
+  color: #000;
+}
+
+.zhangcheng-detail {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 11pt;
+  color: #353535;
+  line-height: 50rpx;
 }

@@ -1,50 +1,58 @@
 <!--detail.wxml-->
+<!-- <view class="arrowhide">
+    <image src="/images/arrow_t.png"></image>
+    <view class="hidetitle">点击此处进行转发</view>
+</view> -->
+
 
 <view class="page">
-	<scroll-view>
-		<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
+
+		<image class="banner" src="{{tasksInfo.tasks_image}}" mode="aspectFill"/>
 		
-		<view class="section section-top">
-			<text class="title text-dark">{{tasksInfo.title}}</text>
+		<view class="title-bar">
+			<text class="title">{{tasksInfo.title}}</text>
 			<view class="sub-title">
-				<text class="price">费用 ¥15 / 人</text>
-				<text class="signer">余位200 ／ 已报名100</text>
+				<text class="price">报名费 ¥15 / 人</text>
+				<text class="signers"><text class="yijingbaoming">已报名126</text>/总名额200</text>
 			</view>
 		</view>
 
-		<view class="section section-fullwidth">
-			<view class="cell">
-				<view class="cell-content">
-					<i class="icon icon-cup"></i>
-					<text>任务地址：<text class="text-dark">江苏 无锡 北塘区 新惠路18号</text></text>
-				</view>
-			</view>
+		<view class="detail-bar">
 
-			<view class="cell">
-				<view class="cell-content">
-					<i class="icon icon-rank"></i>
-					<text>任务日期：<text class="text-dark">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text></text>
-				</view>
-			</view>
-
-			<view class="cell">
-				<view class="cell-content">
-					<i class="icon icon-cup"></i>
-					<text>报名日期：<text class="text-dark">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text></text>
-				</view>
-			</view>
+      <view class="form-title first-form-title">
+        <i class="icon icon-loc-gray"></i>
+        <text class="line-title">任务地址</text>
+        <text class="line-value">江苏无锡北塘区新惠路18号</text>
+      </view>
+      <view class="form-title">
+        <i class="icon icon-date-gray"></i>
+        <text class="line-title">任务日期</text>
+        <text class="line-value">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text>
+      </view>
+      <view class="form-title last-form-title">
+        <i class="icon icon-time-gray"></i>
+        <text class="line-title">报名日期</text>
+        <text class="line-value">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text>
+      </view>
 		</view>
-		<view class="section article text-dark">
-			活动说明
-      <text>
+
+		<view class="detail-bar">
+			<text class="zhangcheng">活动章程</text>
+      <text class="zhangcheng-detail">
         {{tasksInfo.description}}
       </text>
 		</view>
-	</scroll-view>
-	
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
-     <button class="btn btn-bottom picker">我要挑战</button>
-  </picker>
+	<view class="whitespace"></view>
+  <block wx:if="{{enrol_flag == 0}}">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
+      <button class="btn btn-bottom picker">我要挑战</button>
+    </picker>
+  </block>
+  
+  <block wx:elif="{{enrol_flag == 1}}">
+    <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
+  </block>
+  
 
 </view>
 

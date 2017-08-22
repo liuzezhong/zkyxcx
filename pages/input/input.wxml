@@ -1,0 +1,68 @@
+<view class="section">
+  <input type="text" placeholder="请输入用户名"/>
+</view>
+<view class="section">
+  <input type="number" placeholder="请输入手机号码"/>
+</view>
+<view class="section">
+  <input type="idcard" placeholder="请输入身份证号码" />
+</view>
+<view class="section">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" color="#3f84ff"/>{{item.value}}
+    </label>
+  </radio-group>
+</view>
+
+<view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{xueArray}}">
+    <view class="picker">
+      您的血型是：{{xueArray[index]}}
+    </view>
+  </picker>
+</view>
+
+<view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <view class="picker">
+      您的住址：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <textarea bindblur="bindTextAreaBlur" auto-height placeholder="详细地址" />
+</view>
+
+<view>
+  <picker bindchange="bindPickerChange" value="{{heightIndex}}" range="{{height}}">
+    <view class="picker">
+      您的身高是：{{height[heightIndex]}}
+    </view>
+  </picker>
+</view>
+
+<view>
+  <picker bindchange="bindPickerChange" value="{{wightIndex}}" range="{{weight}}">
+    <view class="picker">
+      您的体重是：{{weight[wightIndex]}}
+    </view>
+  </picker>
+</view>
+
+<view>
+  <picker bindchange="bindPickerChange" value="{{clothIndex}}" range="{{clothSize}}">
+    <view class="picker">
+      您的衣服尺码是：{{clothSize[clothIndex]}}
+    </view>
+  </picker>
+</view>
+
+<view>
+  <picker bindchange="bindPickerChange" value="{{culturalLevelIndex}}" range="{{culturalLevel}}">
+    <view class="picker">
+      您的文化水平是：{{culturalLevel[culturalLevelIndex]}}
+    </view>
+  </picker>
+</view>

@@ -4,5 +4,5 @@
   "navigationBarTitleText": "赛事报名",
   "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": "true"
+  "enablePullDownRefresh": true
 }

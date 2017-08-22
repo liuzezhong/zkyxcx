@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    tasks_id:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var tasks_id = options.tasks_id;
+    this.setData({
+      tasks_id: tasks_id,
+    });
   },
 
   /**
@@ -76,26 +79,28 @@ Page({
     });
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      console.log('来自页面内转发按钮');
     }
     return {
       title: '邀请好友一起报名',
-      path: '/',
+      path: '/pages/task/detail/detail?tasks_id='+this.data.tasks_id,
       success: function (res) {
-        console.log(res.shareTickets[0]);
-        if (res.shareTickets[0]) {
-          //用户+100积分
-          wx.showToast({
-            title: '转发成功！',
-            icon: 'success',
-            duration: 2000,
-            success: function () {
-              wx.navigateBack({
-                delta: 4,
-              })
-            }
-          })
-        }
+      
+        //用户+100积分
+        wx.request({
+          url: 'http://192.168.100.252/index.php?m=activity&c=user&a=addrankmoney',
+          data: {
+            skey: JSON.stringify(wx.getStorageSync('skey')),
+            reward: 10,
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          method: 'POST',
+          success: res => {
+            console.log('铠币领取成功');
+          }
+        });
       },
       fail: function (res) {
         console.log(res.shareTickets[0]);

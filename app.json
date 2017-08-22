@@ -1,15 +1,16 @@
 {
   "pages": [
-    
     "pages/home/home",
-    "pages/payment/payment",
+    "pages/task/index/index",
     "pages/index/index",
+    
+    "pages/payment/payment",
+    "pages/task/detail/detail",
     "pages/ranking/ranking",
     "pages/success/success",
-    "pages/task/form/form",
-    "pages/task/detail/detail",
+    "pages/task/form/form"
     
-    "pages/task/index/index"
+    
     
   ]
 }

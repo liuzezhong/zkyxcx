@@ -5,41 +5,44 @@
     <block wx:for="{{tasksList}}">
       <view class="item" id="{{item['tasks_id']}}" bindtap="tapList">
 			<view class="header">
-				<image class="logo" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill" ></image>
+				<image class="logo" src="{{item['tasks_image']}}" mode="aspectFill" ></image>
 				<view class="info text-dark">
 					<view class="inline">
 						<view class="text-black">{{item['title']}}</view>
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>发布于5分钟前</text>
+							<i class="icons icon-time"></i>
+							<text class="icon-to-text">发布于{{item['fabu']}}</text>
 						</view>
 					</view>
-					<view class="inline">
+					 <view class="inline2">
 						<view class="with-icon">
-							<i class="icon icon-cup"></i>
-							<text>由中铠街区体育赞助</text>
+							<i class="icons icon-medal"></i>
+							<text class="icon-to-text">{{item['sponsor']}}</text>
 						</view>
-					</view>
-					<view class="inline">
+					</view> 
+					<view class="inline2">
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>{{item['reward']}}</text>
+							<i class="icons icon-kb"></i>
+							<text class="icon-to-text">{{item['reward']}}</text>
 						</view>
-						<view class="with-icon pull-right">
-							<i class="icon icon-cup"></i>
-							<text>{{item['total_personal']}}</text>
+						<view class= "with-icon pull-right">
+							<i class="icons icon-see"></i>
+							<text class="icon-to-text">{{item['view_times']}}</text>
 						</view>
 						<view class="with-icon">
-							<i class="icon icon-rank"></i>
-							<text>已报名0人</text>
+							<i class="icons icon-regist"></i>
+							<text class="icon-to-text">已报名{{item['count']}}人</text>
 						</view>
 					</view>
 				</view>
 			</view>
 			<view class="footer">
-				<image class="banner" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill"/>
+				<image class="banner" src="{{item['tasks_image']}}" mode="aspectFill"/>
 			</view>
 		</view>
     </block>
 	</view>
+  <view class="meiyougengduole">
+    <text class="meiyougengduole-text">没有更多了</text>
+  </view>
 </view>

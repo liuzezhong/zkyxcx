@@ -18,7 +18,9 @@ page {
 }
 
 .text-black {
-	color: #000;
+	color: #353535;
+  font-size: 14pt;
+  font-family: '微软雅黑';
 }
 
 .text-dark {
@@ -27,13 +29,10 @@ page {
 
 .section {
 	margin-top: 24rpx;
-	padding: 16rpx 24rpx;
 	background-color: #fff;
 }
 
-.section.section-fullwidth {
-	padding: 0;
-}
+
 
 .section.section-top {
 	margin-top: 0;
@@ -63,6 +62,7 @@ page {
 	min-height: 72rpx;
 	align-items: center;
 	padding: 0 24rpx;
+  size: 16px;
 }
 
 .cell-input>label {
@@ -98,11 +98,27 @@ page {
 
 .icon {
 	content: ' ';
-	display: block;
-	margin-right: 8rpx;
-	width: 24rpx;
-	height: 24rpx;
+	display: flex;
+  align-items: center; 
+  margin-left: 30rpx;
+	width: 19px;
+	height: 19px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+.icons {
+	content: ' ';
+	display: flex;
+  align-items: center; 
+	width: 19px;
+	height: 19px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.whitespace{
+  height: 122rpx;
 }

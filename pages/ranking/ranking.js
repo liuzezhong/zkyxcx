@@ -40,7 +40,7 @@ Page({
     wx.request({
       url: 'http://192.168.100.252/index.php?m=activity&c=user&a=rank', //仅为示例，并非真实的接口地址
       data: {
-        skey: wx.getStorageSync('skey'),
+        skey: JSON.stringify(wx.getStorageSync('skey')),
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'

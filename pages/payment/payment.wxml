@@ -1,5 +1,6 @@
 <!--pages/payment/payment.wxml-->
 <view class="group">
     <icon type="success" size="200"/>
-    <button type="primary"  bindtap="primary"> 支付金额 </button>
+    <text>报名信息填写成功，请支付报名费{{total_fee}}元</text>
+    <button type="primary"  bindtap="primary"> 立即支付 </button>
 </view>

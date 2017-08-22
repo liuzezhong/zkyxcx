@@ -4,5 +4,5 @@
   "navigationBarTitleText": "赛事列表",
   "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": "true"
+  "enablePullDownRefresh": true
 }

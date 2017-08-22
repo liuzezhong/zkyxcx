@@ -1,3 +1,4 @@
+import $ from '../../../common/common.js';
 // detail.js
 Page({
 
@@ -10,6 +11,7 @@ Page({
     project_key: [],
     index: 0,
     tasks_id: 0,
+    enrol_flag:0,
   
   },
 
@@ -17,78 +19,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var tasks_id = options.tasks_id;
+    var tasks_id = options.tasks_id;    
     var that = this;
     that.setData({
       'tasks_id': tasks_id,
     });
-    wx.request({
-      url: 'http://192.168.100.252/index.php?m=activity&c=index&a=getActivityDetails', //仅为示例，并非真实的接口地址
-      data: {
-        tasks_id: tasks_id,
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
-      success: function (res) {
-        console.log(res.data);
-        that.setData({
+
+    $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')),},function(res) {
+      console.log(res.data);
+      that.setData({
           'tasksInfo': res.data.tasks,
           'project_value': res.data.project_value,
           'project_key': res.data.project_key,
-        });
-      },
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+          'enrol_flag': res.data.enrol_flag,
+      });
+    });
   },
 
   bindPickerChange: function (e) {
@@ -103,4 +48,28 @@ Page({
       url: '/pages/task/form/form?tasks_id='+tasks_id+'&project_id='+project_id,
     })
   },
+
+  bindReportPickerChange: function (e) {
+    var tasks_id = this.data.tasks_id;
+    wx.navigateTo({
+      url: '/pages/task/form/form?tasks_id=' + tasks_id + '&project_id=-1',
+    })
+  },
+
+  onPullDownRefresh: function () {
+  
+    var tasks_id = this.data.tasks_id;
+    var that = this;
+
+    $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')), }, function (res) {
+      console.log(res.data);
+      that.setData({
+        'tasksInfo': res.data.tasks,
+        'project_value': res.data.project_value,
+        'project_key': res.data.project_key,
+        'enrol_flag': res.data.enrol_flag,
+      });
+      wx.stopPullDownRefresh();
+    });
+  }
 })

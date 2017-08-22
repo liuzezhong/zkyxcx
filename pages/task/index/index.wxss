@@ -4,10 +4,12 @@
 .list {
 	display: flex;
 	flex-direction: column;
+  background-color: #fff;
 }
 
 .header {
 	display: flex;
+  margin-top: 30rpx;
 }
 
 .header .logo {
@@ -28,6 +30,14 @@
 .inline {
 	display: flex;
 	justify-content: space-between;
+  margin-top: 8rpx;
+}
+
+.inline2 {
+	display: flex;
+	justify-content: space-between;
+  margin-top: 8rpx;
+
 }
 
 .pull-right {
@@ -45,4 +55,17 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+.icon-to-text {
+  margin-left: 10rpx;
+}
+
+.meiyougengduole {
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  display: flex;
+  align-items: center;
+  justify-content:center; 
+  background-color: #fff;
 }

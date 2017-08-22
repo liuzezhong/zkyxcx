@@ -2,6 +2,7 @@
 @import "/common/common.wxss";
 
 .tip {
+  
 	position: relative;
 }
 
@@ -9,6 +10,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+  padding-top: 10rpx;
 }
 
 .tip-title>text {
@@ -25,12 +27,14 @@
 }
 
 .tip-description {
-	display: block;
-	margin: 16rpx 24rpx;
+	display: flex;
+  justify-content:center;
+	font-size: 9pt;
+  color: #b2b2b2;
+  margin-top: 20rpx;
 }
 
 .btn-form {
-	
 	align-items: center;
 	width: 100%;
 	height: 98rpx;
@@ -38,4 +42,81 @@
 	color: #fff;
 	font-size: 34rpx;
 	border-radius: 0;
+}
+
+.payStatus {
+  padding-left: 10px;
+}
+
+.form-title {
+  margin-top: 40rpx;
+  font-size: 11pt;
+  font-color: #353535;
+  display: flex;
+  align-items: center;  
+}
+
+.line-title {
+  margin-left: 15rpx;
+  max-width: 170px;
+  color: #000000;
+}
+
+.line-value {
+  margin-left: 30rpx;
+  color: #888888;
+}
+
+.form-bottom {
+  padding-bottom: 40rpx;
+}
+
+.baoming-info {
+  font-size: 11pt;
+  color: #888888;
+}
+
+.baoming-line {
+  display: flex;
+  align-items: center;
+  font-size: 11pt;
+  color: #000;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+
+.baoming-left {
+  width: 200rpx;
+  margin-left: 30rpx;
+  
+}
+
+.baoming-right {
+  margin-left: 10rpx;
+  padding: 0;
+}
+
+.under-line {
+  border-bottom: #e6e6e6 1rpx solid;
+  margin-left:30rpx;
+  margin-right: 30rpx;
+}
+
+.test {
+  display: flex;
+  align-items: center;
+  font-size: 11pt;
+  color: #000;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+
+.section-form {
+  margin-top: 24rpx; 
+  padding-top: 10rpx;
+	background-color: #fff;
 }

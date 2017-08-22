@@ -1,8 +1,8 @@
 {
   "navigationBarBackgroundColor": "#3F84FE",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "四大皆空",
+  "navigationBarTitleText": "任务详情",
   "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": "true"
+  "enablePullDownRefresh": true
 }
