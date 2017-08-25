@@ -2,15 +2,13 @@
   "pages": [
     "pages/home/home",
     "pages/task/index/index",
-    "pages/index/index",
-    
+    "pages/success/success",
     "pages/payment/payment",
     "pages/task/detail/detail",
     "pages/ranking/ranking",
-    "pages/success/success",
     "pages/task/form/form"
-    
-    
-    
-  ]
+  ],
+  "window": {
+    "enablePullDownRefresh": true
+  }
 }

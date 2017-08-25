@@ -62,63 +62,63 @@ Page({
   },
 
   bindDateChange: function (e) {
-    console.log('出生日期picker发送选择改变，携带值为', e.detail.value)
+    
     this.setData({
       date: e.detail.value
     })
   },
 
   bindRegionChange: function (e) {
-    console.log('所在城市picker发送选择改变，携带值为', e.detail.value)
+    
     this.setData({
       region: e.detail.value
     })
   },
 
   radioChange: function (e) {
-    console.log('性别radio发生change事件，携带value值为：', e.detail.value)
+   
     this.setData({
       gender: e.detail.value
     })
   },
 
   bindPickerChange: function (e) {
-    console.log('血型picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       bloodIndex: e.detail.value,
     })
   },
 
   bindSGPickerChange: function (e) {
-    console.log('身高picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       heightIndex: e.detail.value,
     })
   },
 
   bindTZPickerChange: function (e) {
-    console.log('体重picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       wightIndex: e.detail.value,
     })
   },
 
   bindCMPickerChange: function (e) {
-    console.log('尺码picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       clothIndex: e.detail.value,
     })
   },
 
   bindXLPickerChange: function (e) {
-    console.log('学历picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       culturalIndex: e.detail.value,
     })
   },
 
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  
     this.setData({
       multiIndex: e.detail.value
     })
@@ -137,7 +137,7 @@ Page({
       //已经报名
       that.setData({ enrol_flag: 1});
       $.post('/index.php?m=activity&c=index&a=getActivityFormsReport', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey'))},function (res){
-        console.log(res.data.enrol_value);
+        
         that.setData({
           'tasksInfo': res.data.tasks,
           'projectInfo': res.data.project,
@@ -392,7 +392,7 @@ Page({
 
 
   bindMultiPickerColumnChange: function (e) {
-    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    
     var data = {
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex

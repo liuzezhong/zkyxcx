@@ -26,7 +26,7 @@ Page({
     });
 
     $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')),},function(res) {
-      console.log(res.data);
+      
       that.setData({
           'tasksInfo': res.data.tasks,
           'project_value': res.data.project_value,
@@ -38,12 +38,12 @@ Page({
 
   bindPickerChange: function (e) {
     var tasks_id = this.data.tasks_id;
-    console.log('picker发送选择改变，携带值为', e.detail.value);
+    
     this.setData({
       index: e.detail.value
     });
     var project_id = this.data.project_key[this.data.index];
-    console.log(project_id);
+    
     wx.navigateTo({
       url: '/pages/task/form/form?tasks_id='+tasks_id+'&project_id='+project_id,
     })
@@ -62,7 +62,7 @@ Page({
     var that = this;
 
     $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')), }, function (res) {
-      console.log(res.data);
+      
       that.setData({
         'tasksInfo': res.data.tasks,
         'project_value': res.data.project_value,

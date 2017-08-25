@@ -2,7 +2,7 @@
   "navigationBarBackgroundColor": "#fa6567",
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "报名成功",
-  "backgroundColor": "#f7f7f7",
+  "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": "true"
+  "enablePullDownRefresh": true
 }

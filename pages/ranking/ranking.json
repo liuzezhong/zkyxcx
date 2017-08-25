@@ -4,5 +4,5 @@
   "navigationBarTitleText": "身价天梯",
   "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh":"true"
+  "enablePullDownRefresh":true
 }
