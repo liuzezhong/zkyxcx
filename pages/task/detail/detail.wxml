@@ -7,54 +7,57 @@
 
 <view class="page">
 
-		<image class="banner" src="{{tasksInfo.tasks_image}}" mode="aspectFill"/>
-		
-		<view class="title-bar">
-			<text class="title">{{tasksInfo.title}}</text>
-			<view class="sub-title">
-				<text class="price">报名费 ¥15 / 人</text>
-				<text class="signers"><text class="yijingbaoming">已报名126</text>/总名额200</text>
-			</view>
-		</view>
+    <image class="banner" src="{{tasksInfo.tasks_image}}" mode="aspectFill" />
 
-		<view class="detail-bar">
+    <view class="title-bar">
+        <text class="title">{{tasksInfo.title}}</text>
+        <view class="sub-title">
+            <text class="price">咨询热线：{{tasksInfo.leader}}  {{tasksInfo.contact}}</text>
+            <text class="signers"><text class="yijingbaoming">已报名{{tasksInfo.count}}</text>/总名额{{tasksInfo.total_personal}}</text>
+        </view>
+    </view>
 
-      <view class="form-title first-form-title">
-        <i class="icon icon-loc-gray"></i>
-        <text class="line-title">任务地址</text>
-        <text class="line-value">江苏无锡北塘区新惠路18号</text>
-      </view>
-      <view class="form-title">
-        <i class="icon icon-date-gray"></i>
-        <text class="line-title">任务日期</text>
-        <text class="line-value">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text>
-      </view>
-      <view class="form-title last-form-title">
-        <i class="icon icon-time-gray"></i>
-        <text class="line-title">报名日期</text>
-        <text class="line-value">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text>
-      </view>
-		</view>
+    <view class="detail-bar">
 
-		<view class="detail-bar">
-			<text class="zhangcheng">活动章程</text>
-      <text class="zhangcheng-detail">
+        <view class="form-title first-form-title">
+            <i class="icon icon-loc-gray"></i>
+            <text class="line-title">比赛地址</text>
+            <text class="line-value">{{tasksInfo.tasks_address}}</text>
+        </view>
+        <view class="form-title">
+            <i class="icon icon-date-gray"></i>
+            <text class="line-title">任务日期</text>
+            <text class="line-value">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text>
+        </view>
+        <view class="form-title last-form-title">
+            <i class="icon icon-time-gray"></i>
+            <text class="line-title">报名日期</text>
+            <text class="line-value">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text>
+        </view>
+    </view>
+
+    <view class="detail-bar">
+        <text class="zhangcheng">赛事章程</text>
+        <text class="zhangcheng-detail">
         {{tasksInfo.description}}
       </text>
-		</view>
-	<view class="whitespace"></view>
-  <block wx:if="{{enrol_flag == 0}}">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
-      <button class="btn btn-bottom picker">我要挑战</button>
-    </picker>
-  </block>
-  
-  <block wx:elif="{{enrol_flag == 1}}">
-    <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
-  </block>
-  
+    </view>
+    <view class="whitespace"></view>
+    <block wx:if="{{enrol_flag == 0}}">
+        <block wx:if="{{tasksInfo.tasks_status == 1}}">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
+                <button class="btn btn-bottom picker">我要挑战</button>
+            </picker>
+        </block>
+        <block wx:elif="{{tasksInfo.tasks_status == -1}}">
+            <button class="btn btn-bottom picker">报名已截止</button>
+        </block>
+
+    </block>
+
+    <block wx:elif="{{enrol_flag == 1}}">
+        <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
+    </block>
+
 
 </view>
-
-
-

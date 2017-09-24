@@ -5,17 +5,17 @@
 		
     <view class="form-title">
       <i class="icon icon-fee-gray"></i>
-      <text class="line-title">任务类型</text><text class="line-value">{{projectInfo.title}}</text>
+      <text class="line-title">赛事类型</text><text class="line-value">{{projectInfo.title}}</text>
 		</view>
     
 		<view class="form-title">
 			<i class="icon icon-loc-gray"></i>
-			<text class="line-title">任务地址</text>
-      <text class="line-value">江苏无锡18号</text>
+			<text class="line-title">赛事地址</text>
+      <text class="line-value">{{tasksInfo.tasks_address}}</text>
 		</view>
 		<view class="form-title">
 			<i class="icon icon-date-gray"></i>
-			<text class="line-title">任务期限</text>
+			<text class="line-title">赛事期限</text>
       <text class="line-value">{{tasksInfo.end_time}}</text>
 		</view>
 

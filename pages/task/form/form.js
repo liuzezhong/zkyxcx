@@ -246,6 +246,7 @@ Page({
     var skey = JSON.stringify(wx.getStorageSync('skey'));
     var out_trade_no = '';
     var enrol_flag = this.data.enrol_flag;
+    var task_info = this.data.tasksInfo;
     this.setData({
       formData: formData,
     });
@@ -265,10 +266,11 @@ Page({
         //未支付
         $.post('/index.php?m=activity&c=index&a=updateForms', data, function (res) {
           if (that.data.projectInfo.price > 0) {
+            var body_title = task_info.title;
             var postData = {
               skey: JSON.stringify(wx.getStorageSync('skey')),
               total_fee: that.data.projectInfo.price * 100,
-              body: '中铠街区-比赛报名费',
+              body: '中铠街区-' + body_title +'报名费',
             };
             $.post('/index.php?m=activity&c=wxpay&a=getRequestPayment', postData, function (res) {
               that.setData({
