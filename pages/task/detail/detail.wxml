@@ -7,57 +7,71 @@
 
 <view class="page">
 
-    <image class="banner" src="{{tasksInfo.tasks_image}}" mode="aspectFill" />
+  <image class="banner" src="{{tasksInfo.tasks_image}}" mode="aspectFill" />
 
-    <view class="title-bar">
-        <text class="title">{{tasksInfo.title}}</text>
-        <view class="sub-title">
-            <text class="price">咨询热线：{{tasksInfo.leader}}  {{tasksInfo.contact}}</text>
-            <text class="signers"><text class="yijingbaoming">已报名{{tasksInfo.count}}</text>/总名额{{tasksInfo.total_personal}}</text>
-        </view>
+  <view class="title-bar">
+    <text class="title">{{tasksInfo.title}}</text>
+    <view class="sub-title">
+      <text class="price">咨询热线：{{tasksInfo.leader}}  {{tasksInfo.contact}}</text>
+      <text class="signers"><text class="yijingbaoming">已报名{{tasksInfo.count}}</text>/总名额{{tasksInfo.total_personal}}</text>
     </view>
+  </view>
 
-    <view class="detail-bar">
+  <view class="detail-bar">
 
-        <view class="form-title first-form-title">
-            <i class="icon icon-loc-gray"></i>
-            <text class="line-title">比赛地址</text>
-            <text class="line-value">{{tasksInfo.tasks_address}}</text>
-        </view>
-        <view class="form-title">
-            <i class="icon icon-date-gray"></i>
-            <text class="line-title">任务日期</text>
-            <text class="line-value">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text>
-        </view>
-        <view class="form-title last-form-title">
-            <i class="icon icon-time-gray"></i>
-            <text class="line-title">报名日期</text>
-            <text class="line-value">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text>
-        </view>
+    <view class="form-title first-form-title">
+      <i class="icon icon-loc-gray"></i>
+      <text class="line-title">赛事地址</text>
+      <text class="line-value">{{tasksInfo.tasks_address}}</text>
     </view>
+    <view class="form-title">
+      <i class="icon icon-date-gray"></i>
+      <text class="line-title">比赛日期</text>
+      <text class="line-value">{{tasksInfo.start_time}} ～ {{tasksInfo.end_time}}</text>
+    </view>
+    <view class="form-title">
+      <i class="icon icon-time-gray"></i>
+      <text class="line-title">报名期限</text>
+      <text class="line-value">{{tasksInfo.enrol_start_time}} ～ {{tasksInfo.enrol_end_time}}</text>
+    </view>
+    <block wx:if="{{enrol_flag == 1}}">
+      <view class="form-title last-form-title">
+        <i class="icon icon-fee-gray"></i>
+        <text class="line-title">线下签到</text>
+        <text class="line-value">
+          <block wx:if="{{enrol['sign_status'] == 1}}">
+            <text style='color:#09bb07'>已签到<text class="sign-time">（{{enrol['sign_time']}}）</text></text>
+          </block>
+          <block wx:elif="{{enrol['sign_status'] == 0}}">
+            <text style='color:#e64340'>未签到</text>
+          </block>
+        </text>
+      </view>
+    </block>
+  </view>
 
-    <view class="detail-bar">
-        <text class="zhangcheng">赛事章程</text>
-        <text class="zhangcheng-detail">
+  <view class="detail-bar">
+    <text class="zhangcheng">赛事章程</text>
+    <text class="zhangcheng-detail">
         {{tasksInfo.description}}
       </text>
-    </view>
-    <view class="whitespace"></view>
-    <block wx:if="{{enrol_flag == 0}}">
-        <block wx:if="{{tasksInfo.tasks_status == 1}}">
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
-                <button class="btn btn-bottom picker">我要挑战</button>
-            </picker>
-        </block>
-        <block wx:elif="{{tasksInfo.tasks_status == -1}}">
-            <button class="btn btn-bottom picker">报名已截止</button>
-        </block>
-
+  </view>
+  <view class="whitespace"></view>
+  <block wx:if="{{enrol_flag == 0}}">
+    <block wx:if="{{tasksInfo.tasks_status == 1}}">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{project_value}}">
+        <button class="btn btn-bottom picker">我要挑战</button>
+      </picker>
+    </block>
+    <block wx:elif="{{tasksInfo.tasks_status == -1}}">
+      <button class="btn btn-bottom picker">报名已截止</button>
     </block>
 
-    <block wx:elif="{{enrol_flag == 1}}">
-        <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
-    </block>
+  </block>
+
+  <block wx:elif="{{enrol_flag == 1}}">
+    <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
+  </block>
 
 
 </view>

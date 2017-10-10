@@ -1,33 +1,34 @@
 <!--form.wxml-->
 
 <view class="page">
-	<view class="section section-fullwidth section-top">
-		
+  <view class="section section-fullwidth section-top">
+
     <view class="form-title">
       <i class="icon icon-fee-gray"></i>
-      <text class="line-title">赛事类型</text><text class="line-value">{{projectInfo.title}}</text>
-		</view>
-    
-		<view class="form-title">
-			<i class="icon icon-loc-gray"></i>
-			<text class="line-title">赛事地址</text>
-      <text class="line-value">{{tasksInfo.tasks_address}}</text>
-		</view>
-		<view class="form-title">
-			<i class="icon icon-date-gray"></i>
-			<text class="line-title">赛事期限</text>
-      <text class="line-value">{{tasksInfo.end_time}}</text>
-		</view>
+      <text class="line-title">赛事类型</text>
+      <text class="line-value">{{projectInfo.title}}</text>
+    </view>
 
-		<view class="form-title">
-			<i class="icon icon-time-gray"></i>
-			<text class="line-title">报名期限</text>
+    <view class="form-title">
+      <i class="icon icon-loc-gray"></i>
+      <text class="line-title">赛事地址</text>
+      <text class="line-value">{{tasksInfo.tasks_address}}</text>
+    </view>
+    <view class="form-title">
+      <i class="icon icon-date-gray"></i>
+      <text class="line-title">赛事期限</text>
+      <text class="line-value">{{tasksInfo.end_time}}</text>
+    </view>
+
+    <view class="form-title">
+      <i class="icon icon-time-gray"></i>
+      <text class="line-title">报名期限</text>
       <text class="line-value">{{tasksInfo.enrol_end_time}}</text>
-		</view>
-	
+    </view>
+
     <view class="form-title form-bottom">
-			<i class="icon icon-fee-gray"></i>
-			<text class="line-title">报名费用</text>
+      <i class="icon icon-fee-gray"></i>
+      <text class="line-title">报名费用</text>
       <text class="line-value">{{projectInfo.price}}元</text>
       <block wx:if="{{pay_status == 0}}">
         <text class="payStatus" style="color:#e64340;">未支付</text>
@@ -35,20 +36,20 @@
       <block wx:elif="{{pay_status == 1}}">
         <text class="payStatus" style="color:#09bb07;">已支付</text>
       </block>
-		</view>
+    </view>
 
   </view>
 
-  	
 
-	<view class="section section-fullwidth section-transparent tip">
-		<view class="tip-title text-dark">
-			<view class="line"></view>
-			<text class="baoming-info">报名信息</text>
-			<view class="line"></view>
-		</view>
-		<text class="tip-description">请准确填写以下各项信息，便于官方更好的开展准备工作</text>
-	</view>
+
+  <view class="section section-fullwidth section-transparent tip">
+    <view class="tip-title text-dark">
+      <view class="line"></view>
+      <text class="baoming-info">报名信息</text>
+      <view class="line"></view>
+    </view>
+    <text class="tip-description">请准确填写以下各项信息，便于官方更好的开展准备工作</text>
+  </view>
 
 
   <!-- <view class="section">
@@ -80,43 +81,69 @@
 
 
   </view> -->
-
+  <block wx:if="{{enrol_flag == 1}}">
+    <block wx:if="{{enrol['sign_qrcode']}}">
+      <div class="qrcode-div">
+        <image class="qrcode" src="{{enrol['sign_qrcode']}}"></image>
+      </div>
+    </block>
+  </block>
 
   <form bindsubmit="formSubmit">
     <view class="section-form">
       <block wx:for="{{formInfo}}">
         <view class="baoming-line">
           <block wx:if="{{item['name'] == '手机号'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
-            <input class="baoming-right" type="number" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}"/>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
+            <input class="baoming-right" type="number" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}" />
           </block>
 
           <block wx:elif="{{item['name'] == '出生日期'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
-             <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="{{item['name_id']}}" >
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{date}}
               </view>
-            </picker> 
+            </picker>
           </block>
-          
+
           <block wx:elif="{{item['name'] == '身份证号'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
-            <input class="baoming-right" type="idcard" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}"/>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
+            <input class="baoming-right" type="idcard" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}" />
           </block>
 
           <block wx:elif="{{item['name'] == '性别'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <radio-group class="radio-group baoming-right" bindchange="radioChange" name="{{item['name_id']}}">
               <label class="radio" wx:for="{{items}}">
                 <radio value="{{item.name}}" checked="{{item.checked}}" color="#3f84ff" />{{item.value}}
               </label>
             </radio-group>
           </block>
-          
+
           <block wx:elif="{{item['name'] == '血型'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
-            <picker bindchange="bindPickerChange" value="{{bloodIndex}}" range="{{xueArray}}"  name="{{item['name_id']}}">
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
+            <picker bindchange="bindPickerChange" value="{{bloodIndex}}" range="{{xueArray}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{xueArray[bloodIndex]}}
               </view>
@@ -124,7 +151,11 @@
           </block>
 
           <block wx:elif="{{item['name'] == '所在城市'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker mode="region" bindchange="bindRegionChange" value="{{region}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{region[0]}}，{{region[1]}}，{{region[2]}}
@@ -133,16 +164,24 @@
           </block>
 
           <block wx:elif="{{item['name'] == '身高'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker bindchange="bindSGPickerChange" value="{{heightIndex}}" range="{{height}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
-               {{height[heightIndex]}}
+                {{height[heightIndex]}}
               </view>
             </picker>
           </block>
 
           <block wx:elif="{{item['name'] == '体重'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker bindchange="bindTZPickerChange" value="{{wightIndex}}" range="{{weight}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{weight[wightIndex]}}
@@ -151,7 +190,11 @@
           </block>
 
           <block wx:elif="{{item['name'] == '衣服尺码'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker bindchange="bindCMPickerChange" value="{{clothIndex}}" range="{{clothSize}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{clothSize[clothIndex]}}
@@ -160,7 +203,11 @@
           </block>
 
           <block wx:elif="{{item['name'] == '学历'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker bindchange="bindXLPickerChange" value="{{culturalIndex}}" range="{{culturalLevel}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{culturalLevel[culturalIndex]}}
@@ -169,7 +216,11 @@
           </block>
 
           <block wx:elif="{{item['name'] == '职业'}}">
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
             <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" name="{{item['name_id']}}">
               <view class="picker baoming-right">
                 {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
@@ -178,13 +229,17 @@
           </block>
 
           <block wx:else>
-            <view class="baoming-left"><label for="input1"><text>{{item['name']}}</text></label></view>
-            <input class="baoming-right" type="text" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}"/>
+            <view class="baoming-left">
+              <label for="input1">
+                <text>{{item['name']}}</text>
+              </label>
+            </view>
+            <input class="baoming-right" type="text" name="{{item['name_id']}}" bindblur="setInputValue" id="{{index}}" placeholder="请输入{{item['name']}}" value="{{enrol_value[index]['value']}}" />
           </block>
-      </view>
-      <view class="under-line"></view>
+        </view>
+        <view class="under-line"></view>
       </block>
-	</view>
+    </view>
     <view class="btn-area">
       <block wx:if="{{enrol_flag == 0}}">
         <button formType="submit" class="btn">立即报名</button>
@@ -196,10 +251,10 @@
         <block wx:elif="{{pay_status == 1}}">
           <button formType="submit" class="btn">修改信息</button>
         </block>
-        
+
       </block>
     </view>
   </form>
 
-	
+
 </view>

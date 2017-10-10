@@ -123,3 +123,7 @@
   color: #353535;
   line-height: 50rpx;
 }
+
+.sign-time {
+  font-size: 9pt;
+}

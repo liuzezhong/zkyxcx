@@ -24,14 +24,19 @@ Page({
     that.setData({
       'tasks_id': tasks_id,
     });
+  },
+  
+  onShow: function (options) {
+    var tasks_id = this.data.tasks_id;
+    var that = this;
+    $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')), }, function (res) {
 
-    $.post('/index.php?m=activity&c=index&a=getActivityDetails', { tasks_id: tasks_id, skey: JSON.stringify(wx.getStorageSync('skey')),},function(res) {
-      
       that.setData({
-          'tasksInfo': res.data.tasks,
-          'project_value': res.data.project_value,
-          'project_key': res.data.project_key,
-          'enrol_flag': res.data.enrol_flag,
+        'tasksInfo': res.data.tasks,
+        'project_value': res.data.project_value,
+        'project_key': res.data.project_key,
+        'enrol_flag': res.data.enrol_flag,
+        'enrol': res.data.enrol,
       });
     });
   },
