@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/success/success",
     "pages/home/home",
     "pages/task/index/index",
-    "pages/success/success",
+    
     "pages/payment/payment",
     "pages/task/detail/detail",
     "pages/ranking/ranking",

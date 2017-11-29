@@ -41,12 +41,12 @@
         <text class="line-value">
           <block wx:if="{{enrol['sign_status'] == 1}}">
             <text style='color:#09bb07'>已签到<text class="sign-time">（{{enrol['sign_time']}}）</text></text>
-          </block>
-          <block wx:elif="{{enrol['sign_status'] == 0}}">
-            <text style='color:#e64340'>未签到</text>
-          </block>
-        </text>
-      </view>
+    </block>
+    <block wx:elif="{{enrol['sign_status'] == 0}}">
+      <text style='color:#e64340'>未签到</text>
+    </block>
+    </text>
+    </view>
     </block>
   </view>
 
@@ -70,7 +70,7 @@
   </block>
 
   <block wx:elif="{{enrol_flag == 1}}">
-    <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">查看报名信息</button>
+    <button class="btn btn-bottom picker" bindtap="bindReportPickerChange">{{enrol_flag}}查看报名信息</button>
   </block>
 
 
